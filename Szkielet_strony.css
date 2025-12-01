@@ -1,1 +1,17 @@
-.
+body {
+    background-color: lightblue;
+    color: black
+}
+ul { 
+list-style-type: square; /* rodzaj punktora */
+}
+.Logowanie {
+    :hover{
+        text-align: #d1e7dd; /* kolor po najechaniu */
+    } 
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 100px;
+    height: 30px; 
+}
