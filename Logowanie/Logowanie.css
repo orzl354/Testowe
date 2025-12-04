@@ -1,32 +1,62 @@
+/* TŁO STRONY – IDENTYCZNE JAK NA PROFILAKTYCE */
 body {
-    background-color: lightblue;
-    color: black;
+    background-color: #f2f2ee;
+    color: #111;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
+/* PRZYCISK ZALOGUJ SIĘ */
 .Zaloguj_sie {
     position: fixed;
-    top: 100px;
+    top: 120px;
     left: 50%;
     transform: translateX(-50%);
     
-    width: 300px;
-    height: 50px;
+    width: 260px;
+    height: 46px;
+
+    background-color: #ffffff;
+    border-radius: 14px;                 /* ✅ ZAOKRĄGLENIE */
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);  /* ✅ CIEŃ */
 
     text-align: center;
-    line-height: 50px; /* wyśrodkowanie tekstu w pionie */
-    }
-     
+    line-height: 46px;
+    font-weight: bold;
+}
+
+/* PRZYCISK REJESTRACJA */
 .Rejestracja {
     position: fixed;
-    top: 160px;
+    top: 180px;
     left: 50%;
     transform: translateX(-50%);
     
-    width: 300px;
-    height: 50px;
+    width: 260px;
+    height: 46px;
+
+    background-color: #ffffff;
+    border-radius: 14px;                 /* ✅ ZAOKRĄGLENIE */
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);  /* ✅ CIEŃ */
 
     text-align: center;
-    line-height: 50px; /* wyśrodkowanie tekstu w pionie */
-    
- 
+    line-height: 46px;
+    font-weight: bold;
+}
+
+/* LINKI W ŚRODKU – ŻEBY NIE BYŁY „GOŁE” */
+.Zaloguj_sie a,
+.Rejestracja a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* HOVER – DELIKATNE PODŚWIETLENIE */
+.Zaloguj_sie:hover,
+.Rejestracja:hover {
+    background-color: #e0e0dc;
 }
