@@ -1,17 +1,35 @@
-body {
-    background-color: lightblue;
-    color: black
+.okna {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 kolumny */
+    gap: 30px;                              /* równe odstępy */
+    margin-top: 30px;
 }
-ul { 
-list-style-type: square; /* rodzaj punktora */
+
+/* POJEDYNCZE OKNO */
+.okno {
+    background-color: #ffffff;
+    border-radius: 15px;                   /* jak sekcje */
+    padding: 40px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #111;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.Logowanie {
-    :hover{
-        text-align: #d1e7dd; /* kolor po najechaniu */
-    } 
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    width: 100px;
-    height: 30px; 
+
+/* TYTUŁ W OKNIE */
+.okno h2 {
+    margin-bottom: 15px;
+}
+
+/* OPIS */
+.okno p {
+    margin: 0;
+    color: #444;
+}
+
+/* HOVER – DELIKATNY, ELEGANCKI */
+.okno:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.12);
 }
