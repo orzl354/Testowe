@@ -1,1 +1,82 @@
+/* OGÓLNE USTAWIENIA STRONY */
+body {
+    background-color: #f2f2ee;   /* tło */
+    color: #111;                  /* czarne napisy */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/*  NAGŁÓWEK  */
+header {
+    background-color: #e5e5e0;
+    padding: 20px;
+    border-bottom: 2px solid #cfcfcf;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* GŁÓWNA TREŚĆ  */
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/*  SEKCJE (RAMKI JAK W KHAN ACADEMY)  */
+section {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 15px;           /* zaokrąglone rogi */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+    margin-top: 0;
+    font-size: 22px;
+    color: #111;
+}
+
+section p,
+section li {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/*  LISTA  */
+ul { 
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+/*  LINKI W TREŚCI  */
+section a {
+    color: #1a1a1a;
+    text-decoration: underline;
+}
+
+section a:hover {
+    color: #000;
+}
+
+/* DOSTOSOWANIE DO RÓŻNYCH ROZMIARÓW EKRANÓW */
+@media (max-width: 700px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    section h2 {
+        font-size: 18px;
+    }
+
+    section p,
+    section li {
+        font-size: 15px;
+    }
+}
 
