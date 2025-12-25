@@ -33,3 +33,18 @@
     transform: translateY(-4px);
     box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.12);
 }
+/* Normalny wygląd */
+body {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Tryb wysokiego kontrastu */
+.high-contrast {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.high-contrast a {
+  color: #00ff00 !important; /* linki w kontrastowym kolorze */
+}
