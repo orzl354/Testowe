@@ -1,62 +1,139 @@
-/* TŁO STRONY – IDENTYCZNE JAK NA PROFILAKTYCE */
+/* Tło strony */
 body {
-    background-color: #f2f2ee;
+    background-color: #fff;
     color: #111;
-    font-family: Arial, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Nagłówek */
+header {
+    position: relative;
+    padding: 20px 40px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-weight: 600; /* półgruba, jak w pierwotnej stronie */
+    font-size: 24px;  /* dopasowana wielkość */
+    line-height: 1.2;
+}
+  
+
+/* Przycisk High Contrast */
+.header-buttons {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+}
+
+#contrast-toggle {
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 2px solid #000;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#contrast-toggle:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+#contrast-toggle:focus {
+    outline: 3px solid #000;
+    outline-offset: 2px;
+}
+
+/* Linia pod nagłówkiem */
+.separator {
+    border: none;
+    height: 2px;
+    background-color: #000;
+    margin: 0 0 30px 0;
 }
 
 /* PRZYCISK ZALOGUJ SIĘ */
 .Zaloguj_sie {
-    position: fixed;
-    top: 120px;
-    left: 50%;
-    transform: translateX(-50%);
-    
+    margin: 0 auto 10px auto;
     width: 260px;
     height: 46px;
-
     background-color: #ffffff;
-    border-radius: 14px;                 /* ✅ ZAOKRĄGLENIE */
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);  /* ✅ CIEŃ */
-
-    text-align: center;
-    line-height: 46px;
+    border-radius: 14px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
 }
 
-/* PRZYCISK REJESTRACJA */
-.Rejestracja {
-    position: fixed;
-    top: 180px;
-    left: 50%;
-    transform: translateX(-50%);
-    
-    width: 260px;
-    height: 46px;
-
-    background-color: #ffffff;
-    border-radius: 14px;                 /* ✅ ZAOKRĄGLENIE */
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);  /* ✅ CIEŃ */
-
-    text-align: center;
-    line-height: 46px;
-    font-weight: bold;
-}
-
-/* LINKI W ŚRODKU – ŻEBY NIE BYŁY „GOŁE” */
-.Zaloguj_sie a,
-.Rejestracja a {
+.Zaloguj_sie a {
     text-decoration: none;
     color: #000;
     display: block;
     width: 100%;
     height: 100%;
+    text-align: center;
 }
 
-/* HOVER – DELIKATNE PODŚWIETLENIE */
+/* PRZYCISK REJESTRACJA */
+.Rejestracja {
+    margin: 10px auto 5px auto;
+    width: 260px;
+    height: 70px;
+    background-color: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.Rejestracja a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* Hover dla przycisków */
 .Zaloguj_sie:hover,
 .Rejestracja:hover {
     background-color: #e0e0dc;
+}
+
+/* Link „Nie pamiętasz hasła?” */
+.Reset_hasla {
+    margin: 5px auto 30px auto;
+    text-align: center;
+}
+
+.Reset_hasla a {
+    font-size: 12px;
+    color: #333;
+    text-decoration: none;
+}
+
+.Reset_hasla a:hover {
+    text-decoration: underline;
+}
+
+/* Tryb wysokiego kontrastu */
+.high-contrast {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.high-contrast #contrast-toggle {
+    background-color: #fff;
+    color: #000;
+    border-color: #fff;
 }

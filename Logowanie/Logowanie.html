@@ -1,43 +1,41 @@
-
 <!DOCTYPE html>
 <html lang="pl">
-  
 <head>
-  <meta charset="UTF-8">
-
-  <title>Logowanie</title>
-
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <!--  Ikona w rogu przy nazwie-->
-    
-  <link rel="stylesheet" href="Logowanie.css">
-    <!--  Połączenie z plikiem css-->
-      
-   
-        
+    <meta charset="UTF-8">
+    <title>Logowanie</title>
+    <link rel="stylesheet" href="Logowanie.css">
 </head>
 <body>
 
-  <header>
-  <h1 align="center"></h1>
-  <header>
+<header>
+    <h1>Dziennik ciśnienia tętniczego i pulsu z wizualizacją danych</h1>
+    <div class="header-buttons">
+        <button id="contrast-toggle">High Contrast</button>
+    </div>
+</header>
 
-    <main>
-       <div class="Zaloguj_sie">
-        <p> Zaloguj się</p>
+<hr class="separator">
 
+<main>
+    <div class="Zaloguj_sie">
+        <p><a href="../Logowanie/Logowanie.html">Zaloguj się</a></p>
+    </div>
 
-      </div>
-      <div class="Rejestracja">
-        <!--"../Rejstracja/Zarejestruj_sie.html" -> kropki oznaczają wejsc sciezke wyzej bo nie odczytywał pliku po zapakowaniu ich w foldery -->
-        <!-- musi wejsc folder wyzej bo sprawdza docelowo folder Logowanie/ -->
-        <p>Nie masz konta? <a href="../Rejstracja/Zarejestruj_sie.html"> Zarejestruj się</a></p>
-        <p>Nie pamiętasz hasła? <a href="../Reset_hasla /Reset_hasla.html"> Odzyskaj hasło</a> </p>
-       </div>
+    <div class="Rejestracja">
+        <p>Nie masz konta? <a href="../Rejstracja/Zarejestruj_sie.html">Zarejestruj się</a></p>
+    </div>
 
+    <div class="Reset_hasla">
+        <p><a href="../Reset_hasla/Reset_hasla.html">Nie pamiętasz hasła?</a></p>
+    </div>
+</main>
 
-   <main>
-   </body>
+<script>
+    const toggleButton = document.getElementById('contrast-toggle');
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('high-contrast');
+    });
+</script>
+
+</body>
 </html>
-  
-
