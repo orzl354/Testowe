@@ -61,9 +61,8 @@ body {
 /* ============================= */
 
 .high-contrast,
-.high-contrast body {
-    background-color: #000 !important;
-    color: #fff !important;
+.high-contrast .okno{
+    background-color: #000000;
 }
 
 .high-contrast .wrapper {
