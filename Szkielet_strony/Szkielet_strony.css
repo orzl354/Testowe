@@ -54,14 +54,35 @@ body {
 }
 
 /* Tryb wysokiego kontrastu */
-.high-contrast {
-  background-color: #000 !important;
-  color: #fff !important;
+.high-contrast,
+.high-contrast body {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+.high-contrast .okno {
+    background-color: #000;
+}
+.high-contrast .wrapper {
+    background-color: #000;
 }
 
 .high-contrast a {
-  color: #00ff00 !important; /* linki w kontrastowym kolorze */
+    color: #00ff00 !important;
 }
+
+/* ============================= */
+/* HIGH CONTRAST – HEADER */
+/* ============================= */
+
+.high-contrast header {
+    background-color: #000;
+    color: #fff;
+}
+
+.high-contrast header h1 {
+    color: #fff;
+}
+
 /* cały nagłówek */
 header {
     position: relative;
