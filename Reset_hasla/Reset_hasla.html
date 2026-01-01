@@ -6,8 +6,17 @@
 </head>
 <body>
 
-<h2>Reset hasła</h2>
+<div class="wrapper">
+        <!-- TYTUŁ STRONY -->
+        <header>
+            <h1>Dziennik ciśnienia tętniczego i pulsu z wizualizacją danych</h1>
+            <div class = "header-buttons">
+                <button id = "contrast-toggle"> High Contrast </button>
+            </div>
+        </header>
 
+        <hr class = "separator">
+        
 <form action="http://localhost:3000/reset-request" method="POST">
   <label>Podaj e-mail:</label><br>
   <input type="email" name="email" required><br><br>

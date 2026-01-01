@@ -70,7 +70,14 @@ body {
 .high-contrast a {
     color: #00ff00 !important;
 }
+.high-contrast .separator {
+    background-color: #fff;
 
+}
+.high-contrast .header-buttons button {
+        color: #00ff00 !important;
+
+}
 /* ============================= */
 /* HIGH CONTRAST – HEADER */
 /* ============================= */
@@ -83,6 +90,7 @@ body {
 .high-contrast header h1 {
     color: #fff;
 }
+
 
 /* cały nagłówek */
 header {
