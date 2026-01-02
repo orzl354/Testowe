@@ -1,19 +1,29 @@
-// Pobranie przycisku
-const contrastButton = document.getElementById('contrast-toggle');
+document.addEventListener("DOMContentLoaded", () => {
 
-// Sprawdzenie, czy użytkownik już miał włączony kontrast (localStorage)
-if(localStorage.getItem('highContrast') === 'true') {
-    document.body.classList.add('high-contrast');
-}
+    // ===== HIGH CONTRAST =====
+    const contrastButton = document.getElementById('contrast-toggle');
 
-// Funkcja przełączania kontrastu
-contrastButton.addEventListener('click', () => {
-    document.body.classList.toggle('high-contrast');
-
-    // Zapis w localStorage, żeby pamiętał ustawienie przy zmianie podstrony
-    if(document.body.classList.contains('high-contrast')) {
-        localStorage.setItem('highContrast', 'true');
-    } else {
-        localStorage.setItem('highContrast', 'false');
+    if (localStorage.getItem('highContrast') === 'true') {
+        document.body.classList.add('high-contrast');
     }
+
+    contrastButton.addEventListener('click', () => {
+        document.body.classList.toggle('high-contrast');
+
+        if (document.body.classList.contains('high-contrast')) {
+            localStorage.setItem('highContrast', 'true');
+        } else {
+            localStorage.setItem('highContrast', 'false');
+        }
+    });
+
+    // ===== LOGOWANIE / UŻYTKOWNIK =====
+    const loginButton = document.getElementById("loginButton");
+    const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+
+    if (loginButton && loggedUser) {
+        loginButton.textContent = `${loggedUser.imie} ${loggedUser.nazwisko}`;
+        loginButton.href = "../Profil/Profil.html";
+    }
+
 });
