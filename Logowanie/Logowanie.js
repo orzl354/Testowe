@@ -36,4 +36,19 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("loggedUser", JSON.stringify(user));
         window.location.href = "../Profil/Profil.html";
     });
+    /* POKAŻ / UKRYJ HASŁO */
+    const passwordInput = document.getElementById("haslo");
+    const togglePassword = document.getElementById("togglePassword");
+
+    if (togglePassword && passwordInput) {
+        togglePassword.classList.add("hidden"); // start: hasło ukryte
+
+        togglePassword.addEventListener("click", () => {
+            const isPassword = passwordInput.type === "password";
+
+            passwordInput.type = isPassword ? "text" : "password";
+            togglePassword.classList.toggle("hidden", isPassword);
+        });
+    }
+
 });

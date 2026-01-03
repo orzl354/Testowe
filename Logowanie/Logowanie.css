@@ -25,6 +25,13 @@
     padding: 10px;
     border-radius: 8px;
     border: 2px solid #ccc;
+    box-sizing: border-box;
+}
+/* zmiana koloru ramki po kliknięciu na wpisywanie do inputa */
+.field input:focus {
+    outline: none; /* usuwa domyślny focus */
+    border-color: #007BFF; /* niebieski lub inny kontrastowy kolor */
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.3);
 }
 
 .submit-btn {
@@ -78,4 +85,81 @@
 
 .high-contrast .login-links a {
     color: #00ff00;
+}
+
+/* przycisk pokazania hasła */
+/* === POKAŻ / UKRYJ HASŁO === */
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 42px;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* przekreślenie oka */
+#togglePassword::after {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 2px;
+    background: #000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    opacity: 0;
+}
+
+/* hasło UKRYTE */
+#togglePassword.hidden::after {
+    opacity: 1;
+}
+
+/* ---------------------------------------- HIGH CONTRAST ----------------------------------------*/
+
+.high-contrast #togglePassword::after {
+    background: #00ff00;
+}
+/* high contrast tekst (bo po kliknieciu robił sie czarny z czarnym nie było widac napisów)*/
+.high-contrast .form-box,
+.high-contrast .form-box h2,
+.high-contrast .form-box label,
+.high-contrast .form-box small,
+.high-contrast .form-box a {
+    color: #00ff00;
+}
+/* High Contrast – przycisk oka i kreska widoczne */
+.high-contrast #togglePassword {
+    color: #00ff00; /* ikona oka */
+}
+
+.high-contrast #togglePassword::after {
+    background: #00ff00; /* kreska przy ukrytym haśle */
+}
+/* tekst w boxach do wpisania danych zrobiony na zielony */
+.high-contrast .field input {
+    background: #000;      /* tło pola*/
+    color: #00ff00;        /* tekst w polu */     /* :) */
+    border-color: #00ff00;  /* ramka pola */
+}
+/* zmiana koloru ramki po kliknieciu w input w high contrast */
+.high-contrast .field input:focus {
+    border-color: #FFD700; /* np. jasny żółty */
+    box-shadow: 0 0 0 2px rgba(255,215,0,0.5); /* lekki efekt glow */
+    outline: none;
+}
+.high-contrast .wrapper {
+    background-color: #000;
 }
