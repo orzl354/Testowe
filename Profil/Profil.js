@@ -7,13 +7,29 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    document.getElementById("welcome").textContent =
-        `Zalogowany jako: ${user.imie} ${user.nazwisko}`;
+    // dane użytkownika
+    document.getElementById("imie").textContent = user.imie;
+    document.getElementById("nazwisko").textContent = user.nazwisko;
+    document.getElementById("wiek").textContent = user.wiek;
+    document.getElementById("email").textContent = user.email;
 
-    document.getElementById("logout").addEventListener("click", () => {
+    // wylogowanie
+    document.getElementById("logoutBtn").addEventListener("click", () => {
         localStorage.removeItem("loggedUser");
-        window.location.href = "../Logowanie/Logowanie.html";
+        window.location.href = "../Szkielet_strony/Szkielet_strony.html";
     });
 
-});
+    // high contrast
+    const toggle = document.getElementById("contrast-toggle");
+    if (localStorage.getItem("highContrast") === "true") {
+        document.body.classList.add("high-contrast");
+    }
 
+    toggle.addEventListener("click", () => {
+        document.body.classList.toggle("high-contrast");
+        localStorage.setItem(
+            "highContrast",
+            document.body.classList.contains("high-contrast")
+        );
+    });
+});

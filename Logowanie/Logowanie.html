@@ -7,37 +7,60 @@
 </head>
 <body>
 
- <div class="wrapper">
-        <!-- TYTUŁ STRONY -->
-        <header>
-            <h1>Dziennik ciśnienia tętniczego i pulsu z wizualizacją danych</h1>
-            <div class = "header-buttons">
-                <button id = "contrast-toggle"> High Contrast </button>
+<div class="wrapper">
+
+    <header>
+        <h1>
+            <a href="../Strona_glowna/index.html" class="header-link">
+                Dziennik ciśnienia tętniczego i pulsu z wizualizacją danych
+            </a>
+        </h1>
+
+        <div class="header-buttons">
+            <button id="contrast-toggle">High Contrast</button>
+        </div>
+    </header>
+
+    <hr class="separator">
+
+    <main>
+        <section class="form-box">
+            <h2>Logowanie</h2>
+
+            <form id="logowanieForm" novalidate>
+
+                <div class="field">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email">
+                </div>
+
+                <div class="field">
+                    <label for="haslo">Hasło</label>
+                    <input type="password" id="haslo">
+                </div>
+
+                <small class="error"></small>
+
+                <button type="submit" class="submit-btn">
+                    Zaloguj się
+                </button>
+            </form>
+
+            <div class="login-links">
+                <a href="../Reset_hasla/Reset_hasla.html">
+                    Nie pamiętasz hasła?
+                </a>
+
+                <a href="../Rejstracja/Zarejestruj_sie.html" class="register-link">
+                    Nie masz konta? Zarejestruj się
+                </a>
             </div>
-        </header>
 
-        <hr class = "separator">
+        </section>
+    </main>
 
-<main>
-    <div class="Zaloguj_sie">
-        <p><a href="../Logowanie_wlasciwe/Logowanie_wlasciwe.html">Zaloguj się</a></p>
-    </div>
+</div>
 
-    <div class="Rejestracja">
-        <p>Nie masz konta? <a href="../Rejstracja/Zarejestruj_sie.html">Zarejestruj się</a></p>
-    </div>
-
-    <div class="Reset_hasla">
-        <p><a href="../Reset_hasla/Reset_hasla.html">Nie pamiętasz hasła?</a></p>
-    </div>
-</main>
-
-<script>
-    const toggleButton = document.getElementById('contrast-toggle');
-    toggleButton.addEventListener('click', () => {
-        document.body.classList.toggle('high-contrast');
-    });
-</script>
-
+<script src="Logowanie.js"></script>
 </body>
 </html>

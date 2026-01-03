@@ -12,10 +12,6 @@ body {
 .wrapper {
     padding: 20px;
 }
-.high-contrast .back-link {
-    color: #00ff00 !important;
-}
-
 
 /* HEADER */
 header {
@@ -40,8 +36,8 @@ header {
     border-radius: 8px;
     border: 2px solid #000;
     background: #fff;
-    cursor: pointer;
     font-weight: 600;
+    cursor: pointer;
 }
 
 /* SEPARATOR */
@@ -63,19 +59,15 @@ header {
     text-align: center;
 }
 
-.form-box h2 {
+.field {
+    text-align: left;
     margin-bottom: 20px;
 }
 
-.field {
-    margin-bottom: 18px;
-    text-align: left;
-}
-
 label {
-    display: block;
-    margin-bottom: 6px;
     font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
 }
 
 input {
@@ -103,14 +95,6 @@ input {
     cursor: pointer;
 }
 
-.back-link {
-    display: inline-block;
-    margin-top: 20px;
-    font-size: 14px;
-    text-decoration: none;
-    color: #000;
-}
-
 /* HIGH CONTRAST */
 .high-contrast {
     background: #000 !important;
@@ -136,32 +120,3 @@ input {
     background: #fff;
     color: #000;
 }
-/* przycisk normalny */
-#resetForm button {
-    padding: 12px 24px;
-    border-radius: 10px;
-    border: 2px solid #000;
-    background-color: #fff;
-    color: #000;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* hover */
-#resetForm button:hover {
-    background-color: #000;
-    color: #fff;
-}
-
-/* HIGH CONTRAST – CAŁY PRZYCISK */
-.high-contrast #resetForm button {
-    background-color: #00ff00;
-    color: #000;
-    border-color: #00ff00;
-}
-
-.high-contrast #resetForm button:hover {
-    background-color: #fff;
-    color: #000;
-}
-

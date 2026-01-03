@@ -3,34 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <title>Rejestracja</title>
+
+    <link rel="stylesheet" href="Zarejestruj_sie.css">
 </head>
 <body>
 
-    <h2>Formularz rejestracyjny</h2>
+<div class="wrapper">
 
-    <form id="Rejestracja" action="#" method="post">
+    <!-- HEADER -->
+    <header>
+        <h1>
+            <a href="../Strona_glowna/index.html" class="header-link">
+                Dziennik ciśnienia tętniczego i pulsu z wizualizacją danych
+            </a>
+        </h1>
 
-        <label for="imie">Imię:</label><br>
-        <input type="text" id="imie" name="imie" required><br><br>
+        <div class="header-buttons">
+            <button id="contrast-toggle">High Contrast</button>
+        </div>
+    </header>
 
-        <label for="nazwisko">Nazwisko:</label><br>
-        <input type="text" id="nazwisko" name="nazwisko" required><br><br>
+    <hr class="separator">
 
-        <label for="wiek">Wiek:</label><br>
-        <input type="number" id="wiek" name="wiek" min="1" required><br><br>
+    <!-- FORMULARZ -->
+    <main>
+        <section class="form-box">
+            <h2>Rejestracja</h2>
 
-        <label for="email">E-mail:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+            <form id="Rejestracja" novalidate>
 
-        <label for="haslo">Utwórz hasło:</label><br>
-        <input type="password" id="haslo" name="haslo" required><br><br>
+                <div class="field">
+                    <label for="imie">Imię</label>
+                    <input type="text" id="imie">
+                    <small class="error"></small>
+                </div>
 
-        <button type="submit">Zarejestruj się</button>
+                <div class="field">
+                    <label for="nazwisko">Nazwisko</label>
+                    <input type="text" id="nazwisko">
+                    <small class="error"></small>
+                </div>
 
-    </form>
+                <div class="field">
+                    <label for="wiek">Wiek</label>
+                    <input type="number" id="wiek" min="1">
+                    <small class="error"></small>
+                </div>
 
-    <!-- 🔥 TO JEST KLUCZ 🔥 -->
-    <script src="Zarejestruj_sie.js"></script>
+                <div class="field">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email">
+                    <small class="error"></small>
+                </div>
 
+                <div class="field">
+                    <label for="haslo">Hasło</label>
+                    <input type="password" id="haslo">
+                    <small class="hint">
+                        Min. 8 znaków, 1 wielka litera, 2 znaki specjalne
+                    </small>
+                    <small class="error"></small>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Zarejestruj się
+                </button>
+
+            </form>
+        </section>
+    </main>
+
+</div>
+
+<script src="Zarejestruj_sie.js"></script>
 </body>
 </html>

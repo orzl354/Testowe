@@ -1,60 +1,89 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // ===== LISTA UŻYTKOWNIKÓW =====
-    let users = JSON.parse(localStorage.getItem("users")) || [];
+    /* ===== HIGH CONTRAST (WSPÓLNY) ===== */
+    const toggle = document.getElementById("contrast-toggle");
 
-    // ===== DOMYŚLNE KONTO (ZAWSZE ISTNIEJE) =====
-    const defaultUser = {
-        imie: "Jan",
-        nazwisko: "Kowalski",
-        wiek: 25,
-        email: "demo@test.pl",
-        haslo: "Demo@123!"
-    };
-
-    if (!users.find(u => u.email === defaultUser.email)) {
-        users.push(defaultUser);
-        localStorage.setItem("users", JSON.stringify(users));
+    if (localStorage.getItem("highContrast") === "true") {
+        document.body.classList.add("high-contrast");
     }
 
-    // ===== OBSŁUGA FORMULARZA =====
-    document.getElementById("Rejestracja").addEventListener("submit", function (e) {
+    toggle.addEventListener("click", () => {
+        document.body.classList.toggle("high-contrast");
+        localStorage.setItem(
+            "highContrast",
+            document.body.classList.contains("high-contrast")
+        );
+    });
+
+    /* ===== UŻYTKOWNICY ===== */
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    const form = document.getElementById("Rejestracja");
+
+    form.addEventListener("submit", e => {
         e.preventDefault();
+        clearErrors();
 
-        const imie = document.getElementById("imie").value.trim();
-        const nazwisko = document.getElementById("nazwisko").value.trim();
-        const wiek = parseInt(document.getElementById("wiek").value);
-        const email = document.getElementById("email").value.trim().toLowerCase();
-        const haslo = document.getElementById("haslo").value;
+        const imie = imieField.value.trim();
+        const nazwisko = nazwiskoField.value.trim();
+        const wiek = Number(wiekField.value);
+        const email = emailField.value.trim().toLowerCase();
+        const haslo = hasloField.value;
 
-        if (wiek < 18) {
-            alert("Musisz mieć co najmniej 18 lat.");
-            return;
+        let valid = true;
+
+        if (imie === "") error(imieField, "Podaj imię"), valid = false;
+        if (nazwisko === "") error(nazwiskoField, "Podaj nazwisko"), valid = false;
+        if (wiek < 18) error(wiekField, "Musisz mieć co najmniej 18 lat"), valid = false;
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            error(emailField, "Niepoprawny adres e-mail");
+            valid = false;
         }
 
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert("Niepoprawny adres e-mail.");
-            return;
-        }
-
-        const hasUppercase = /[A-Z]/.test(haslo);
-        const specialChars = haslo.match(/[^a-zA-Z0-9]/g);
-        if (haslo.length < 8 || !hasUppercase || !specialChars || specialChars.length < 2) {
-            alert("Hasło musi mieć min. 8 znaków, 1 wielką literę i 2 znaki specjalne.");
-            return;
+        const special = haslo.match(/[^a-zA-Z0-9]/g);
+        if (
+            haslo.length < 8 ||
+            !/[A-Z]/.test(haslo) ||
+            !special || special.length < 2
+        ) {
+            error(hasloField, "Hasło nie spełnia wymagań");
+            valid = false;
         }
 
         if (users.find(u => u.email === email)) {
-            alert("Konto z tym adresem e-mail już istnieje.");
-            return;
+            error(emailField, "Konto z tym e-mailem już istnieje");
+            valid = false;
         }
 
-        users.push({ imie, nazwisko, wiek, email, haslo });
-        localStorage.setItem("users", JSON.stringify(users));
+        if (!valid) return;
 
-        alert("Rejestracja zakończona sukcesem!");
-        window.location.href = "../Logowanie/Logowanie.html";
+        const newUser = { imie, nazwisko, wiek, email, haslo };
+
+users.push(newUser);
+localStorage.setItem("users", JSON.stringify(users));
+
+// ✅ AUTOMATYCZNE ZALOGOWANIE
+localStorage.setItem("loggedUser", JSON.stringify(newUser));
+
+// ✅ PRZEJŚCIE DO PROFILU
+window.location.href = "../Profil/Profil.html";
+
     });
 
+    /* ===== HELPERY ===== */
+    const imieField = document.getElementById("imie");
+    const nazwiskoField = document.getElementById("nazwisko");
+    const wiekField = document.getElementById("wiek");
+    const emailField = document.getElementById("email");
+    const hasloField = document.getElementById("haslo");
+
+    function error(input, message) {
+        input.nextElementSibling.nextElementSibling.textContent = message;
+    }
+
+    function clearErrors() {
+        document.querySelectorAll(".error").forEach(e => e.textContent = "");
+    }
+    
 });

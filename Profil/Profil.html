@@ -1,77 +1,63 @@
-
-<!--
-<!DOCTYPE html>
-<html lang="pl">
-  
-<head>
-  <meta charset="UTF-8">
-
-  <title>Profilaktyka</title>
-
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  
-    
-  <link rel="stylesheet" href="Profil.css">
-    
-      
-    
-
-</head>
-<body>
-
-  <header>
-  <h1 align="center">Nasza strona</h1>
-  </header>
-
-    <main>
-      
-       <div class="Logowanie">
-    <a href="Logowanie.html">Logowanie</a>
-</div>
-
-  
-
-</main>
-   </body>
-</html>
-  
-  -->
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Profil</title>
+    <title>Profil użytkownika</title>
+    <link rel="stylesheet" href="Profil.css">
 </head>
 <body>
 
-<h2>Profil użytkownika</h2>
+<div class="wrapper">
 
-<p id="welcome"></p>
+    <!-- HEADER -->
+    <header>
+        <h1>
+            <a href="../Szkielet_strony/Szkielet_strony.html" class="header-link">
+                Dziennik ciśnienia tętniczego i pulsu z wizualizacją danych
+            </a>
+        </h1>
 
-<a href="#" id="logout">Wyloguj się</a>
+        <div class="header-buttons">
+            <button id="contrast-toggle">High Contrast</button>
+        </div>
+    </header>
+
+    <hr class="separator">
+
+    <!-- CONTENT -->
+    <main class="profile-layout">
+
+        <!-- LEWA STRONA – MENU -->
+        <aside class="profile-menu">
+            <h3>Menu</h3>
+
+            <a href="#" class="menu-item active">Profil</a>
+            <a href="../Statystyki/Statystyki.html" class="menu-item">
+                Statystyki
+            </a>
+            <a href="#" class="menu-item disabled">
+                Ustawienia (wkrótce)
+            </a>
+
+            <button id="logoutBtn" class="logout-btn">
+                Wyloguj się
+            </button>
+        </aside>
+
+        <!-- PRAWA STRONA – DANE -->
+        <section class="profile-data">
+            <h2>Dane użytkownika</h2>
+
+            <div class="data-row"><span>Imię:</span> <strong id="imie"></strong></div>
+            <div class="data-row"><span>Nazwisko:</span> <strong id="nazwisko"></strong></div>
+            <div class="data-row"><span>Wiek:</span> <strong id="wiek"></strong></div>
+            <div class="data-row"><span>E-mail:</span> <strong id="email"></strong></div>
+        </section>
+
+    </main>
+
+</div>
 
 <script src="Profil.js"></script>
-<a href="../Szkielet_strony/Szkielet_strony.html" class="back-button">
-    ← Powrót do strony głównej
-</a>
-<button id="logoutBtn">Wyloguj się</button>
-<script>
-    // ===== OCHRONA STRONY =====
-    const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
-    if (!loggedUser) {
-        window.location.href = "../Logowanie/Logowanie.html";
-    }
-
-    // ===== WYŚWIETLENIE DANYCH =====
-    document.getElementById("userData").textContent =
-        `Zalogowany jako: ${loggedUser.imie} ${loggedUser.nazwisko} (${loggedUser.email})`;
-
-    // ===== WYLOGOWANIE =====
-    document.getElementById("logoutBtn").addEventListener("click", () => {
-        localStorage.removeItem("loggedUser");
-        window.location.href = "../Strona_glowna/Szkielet_strony.html";
-    });
-</script>
-
 </body>
 </html>
