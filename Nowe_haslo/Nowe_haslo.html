@@ -2,7 +2,8 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Nowe hasło</title>
+    <title>Ustaw nowe hasło - Nazwa strony</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="Nowe_haslo.css">
 </head>
 <body>
@@ -11,7 +12,7 @@
 
     <header>
         <h1>
-            <a href="../Strona_glowna/index.html" class="header-link">
+            <a href="../Szkielet_strony/Szkielet_strony.html" class="header-link">
                 Dziennik ciśnienia tętniczego i pulsu z wizualizacją danych
             </a>
         </h1>
@@ -28,12 +29,13 @@
             <h2>Ustaw nowe hasło</h2>
 
             <form id="newPasswordForm" novalidate>
-
                 <div class="field">
                     <label for="haslo">Nowe hasło</label>
                     <input type="password" id="haslo">
-                    <small class="error"></small>
+                    <small class="hint">Min. 8 znaków, 1 wielka litera, 2 znaki specjalne</small>
                 </div>
+                
+                <small class="error" style="color: red; display: block; margin-bottom: 10px; min-height: 1em;"></small>
 
                 <button type="submit" class="submit-btn">
                     Zapisz hasło

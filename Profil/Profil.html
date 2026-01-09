@@ -2,14 +2,14 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Profil użytkownika</title>
+    <title>Profil użytkownika - Dziennik Ciśnienia</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="Profil.css">
 </head>
 <body>
 
 <div class="wrapper">
 
-    <!-- HEADER -->
     <header>
         <h1>
             <a href="../Szkielet_strony/Szkielet_strony.html" class="header-link">
@@ -24,34 +24,30 @@
 
     <hr class="separator">
 
-    <!-- CONTENT -->
     <main class="profile-layout">
 
-        <!-- LEWA STRONA – MENU -->
         <aside class="profile-menu">
             <h3>Menu</h3>
-
-            <a href="#" class="menu-item active">Profil</a>
-            <a href="../Statystyki/Statystyki.html" class="menu-item">
-                Statystyki
-            </a>
-            <a href="#" class="menu-item disabled">
-                Ustawienia (wkrótce)
-            </a>
+            <nav>
+                <a href="Profil.html" class="menu-item active">Profil</a>
+                <a href="../Statystyki/Statystyki.html" class="menu-item">Statystyki</a>
+                <a href="#" class="menu-item disabled">Ustawienia (wkrótce)</a>
+            </nav>
 
             <button id="logoutBtn" class="logout-btn">
                 Wyloguj się
             </button>
         </aside>
 
-        <!-- PRAWA STRONA – DANE -->
         <section class="profile-data">
-            <h2>Dane użytkownika</h2>
+            <h2>Twoje Dane</h2>
 
-            <div class="data-row"><span>Imię:</span> <strong id="imie"></strong></div>
-            <div class="data-row"><span>Nazwisko:</span> <strong id="nazwisko"></strong></div>
-            <div class="data-row"><span>Wiek:</span> <strong id="wiek"></strong></div>
-            <div class="data-row"><span>E-mail:</span> <strong id="email"></strong></div>
+            <div class="data-container">
+                <div class="data-row"><span>Imię:</span> <strong id="imie">---</strong></div>
+                <div class="data-row"><span>Nazwisko:</span> <strong id="nazwisko">---</strong></div>
+                <div class="data-row"><span>Wiek:</span> <strong id="wiek">---</strong></div>
+                <div class="data-row"><span>E-mail:</span> <strong id="email">---</strong></div>
+            </div>
         </section>
 
     </main>

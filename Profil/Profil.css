@@ -1,7 +1,8 @@
+/* --- STYLE OGÓLNE --- */
 body {
     margin: 0;
-    font-family: system-ui, sans-serif;
-    background: #fff;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
     color: #111;
 }
 
@@ -9,7 +10,7 @@ body {
     padding: 20px;
 }
 
-/* HEADER */
+/* --- NAGŁÓWEK --- */
 header {
     position: relative;
     text-align: center;
@@ -20,6 +21,8 @@ header {
     text-decoration: none;
     color: inherit;
 }
+
+.header-link:hover { text-decoration: underline; }
 
 .header-buttons {
     position: absolute;
@@ -34,6 +37,12 @@ header {
     background: #fff;
     font-weight: 600;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+#contrast-toggle:hover {
+    background: #000;
+    color: #fff;
 }
 
 .separator {
@@ -43,7 +52,7 @@ header {
     margin: 20px 0;
 }
 
-/* LAYOUT */
+/* --- LAYOUT PROFILU --- */
 .profile-layout {
     display: grid;
     grid-template-columns: 260px 1fr;
@@ -52,26 +61,36 @@ header {
     margin: 40px auto;
 }
 
-/* MENU */
+/* --- MENU BOCZNE --- */
 .profile-menu {
     background: #fff;
     border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+    padding: 25px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    height: fit-content;
+}
+
+.profile-menu h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
 }
 
 .menu-item {
     display: block;
-    padding: 12px;
+    padding: 12px 15px;
     margin-bottom: 8px;
     border-radius: 10px;
     text-decoration: none;
-    color: #000;
+    color: #333;
     font-weight: 600;
+    transition: 0.2s;
 }
 
 .menu-item:hover {
-    background: #eaeaea;
+    background: #f0f0f0;
 }
 
 .menu-item.active {
@@ -80,53 +99,74 @@ header {
 }
 
 .menu-item.disabled {
-    opacity: 0.5;
-    pointer-events: none;
+    opacity: 0.4;
+    cursor: not-allowed;
 }
 
 .logout-btn {
-    margin-top: 20px;
+    margin-top: 30px;
     width: 100%;
     padding: 12px;
     border-radius: 10px;
     border: 2px solid #000;
     background: #fff;
+    color: #000;
     font-weight: bold;
     cursor: pointer;
+    transition: 0.2s;
 }
 
-/* DATA */
+.logout-btn:hover {
+    background: #c00000;
+    color: #fff;
+    border-color: #c00000;
+}
+
+/* --- DANE UŻYTKOWNIKA --- */
 .profile-data {
     background: #fff;
     border-radius: 16px;
-    padding: 30px;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+    padding: 40px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.profile-data h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
 }
 
 .data-row {
-    margin-bottom: 14px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .data-row span {
     display: inline-block;
-    width: 120px;
-    color: #555;
+    width: 140px;
+    color: #666;
 }
 
-/* HIGH CONTRAST */
-.high-contrast {
-    background: #000 !important;
+/* --- TRYB WYSOKIEGO KONTRASTU --- */
+body.high-contrast {
+    background-color: #000 !important;
     color: #fff !important;
 }
 
 .high-contrast .profile-menu,
 .high-contrast .profile-data {
-    background: #000;
-    border: 2px solid #fff;
+    background-color: #000 !important;
+    border: 2px solid #00ff00;
+    box-shadow: none;
 }
 
 .high-contrast .menu-item {
     color: #00ff00;
+}
+
+.high-contrast .menu-item:hover {
+    background: #222;
 }
 
 .high-contrast .menu-item.active {
@@ -134,10 +174,19 @@ header {
     color: #000;
 }
 
+.high-contrast .data-row {
+    border-color: #333;
+}
+
+.high-contrast .data-row span,
+.high-contrast .profile-menu h3 {
+    color: #00ff00;
+}
+
 .high-contrast .logout-btn {
     background-color: #00ff00;
     color: #000;
-    border: 2px solid #00ff00;
+    border-color: #00ff00;
 }
 
 .high-contrast .logout-btn:hover {
@@ -145,3 +194,5 @@ header {
     color: #000;
 }
 
+.high-contrast .separator { background-color: #fff; }
+.high-contrast .header-link { color: #fff !important; }
