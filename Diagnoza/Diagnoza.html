@@ -1,42 +1,80 @@
 <!DOCTYPE html>
 <html lang="pl">
-  
 <head>
-  <meta charset="UTF-8">
-
-  <title>Diagnoza</title>
-
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <!--  Ikona w rogu przy nazwie-->
-    
-  <link rel="stylesheet" href="Diagnoza.css">
-    <!--  Połączenie z plikiem css-->
-      
-    
-
+    <meta charset="UTF-8">
+    <title>Diagnoza - Czy choruję na nadciśnienie?</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="Diagnoza.css">
 </head>
 <body>
 
- <div class="wrapper">
-        <!-- TYTUŁ STRONY -->
-        <header>
-            <h1>Dziennik ciśnienia tętniczego i pulsu z wizualizacją danych</h1>
-            <div class = "header-buttons">
-                <button id = "contrast-toggle"> High Contrast </button>
-            </div>
-        </header>
+<div class="wrapper">
+    <header>
+        <h1>
+            <a href="../Szkielet_strony/Szkielet_strony.html" class="header-link">
+                Dziennik ciśnienia tętniczego i pulsu z wizualizacją danych
+            </a>
+        </h1>
+        <div class="header-buttons">
+            <button id="contrast-toggle">High Contrast</button>
+            <a href="../Logowanie/Logowanie.html" class="logowanie-button" id="loginButton">Zaloguj się</a>
+        </div>
+    </header>
 
-        <hr class = "separator">
+    <hr class="separator">
+
     <main>
-      
-       <div class="Logowanie">
-    <a href="../Logowanie/Logowanie.html">Logowanie</a>
+        <section class="info-box">
+            <h2>Klasyfikacja ciśnienia tętniczego</h2>
+            <p>Porównaj swoje wyniki z poniższą tabelą, aby dowiedzieć się, czy Twoje ciśnienie mieści się w normie.</p>
+            
+            
+
+
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Kategoria</th>
+                            <th>Skurczowe (mmHg)</th>
+                            <th>Rozkurczowe (mmHg)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Optymalne</td>
+                            <td>&lt; 120</td>
+                            <td>&lt; 80</td>
+                        </tr>
+                        <tr class="norm-row">
+                            <td>Prawidłowe</td>
+                            <td>120–129</td>
+                            <td>80–84</td>
+                        </tr>
+                        <tr>
+                            <td>Wysokie prawidłowe</td>
+                            <td>130–139</td>
+                            <td>85–89</td>
+                        </tr>
+                        <tr class="warn-row">
+                            <td>Nadciśnienie stopień 1</td>
+                            <td>140–159</td>
+                            <td>90–99</td>
+                        </tr>
+                        <tr class="danger-row">
+                            <td>Nadciśnienie stopień 2</td>
+                            <td>160–179</td>
+                            <td>100–109</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="disclaimer">* Diagnozę o chorobie może postawić wyłącznie lekarz na podstawie serii pomiarów.</p>
+        </section>
+    </main>
 </div>
 
-  
-
-</main>
-   </body>
+<script src="Diagnoza.js"></script>
+</body>
 </html>
-  
-

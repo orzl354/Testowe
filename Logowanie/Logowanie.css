@@ -1,5 +1,71 @@
-/* wrapper i header masz już — nie powtarzam */
+/* --- STYLE OGÓLNE --- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #000;
+    background-color: #fff;
+}
 
+.wrapper {
+    max-width: auto;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- NAGŁÓWEK (Identyczny jak w Szkielet_strony) --- */
+header {
+    position: relative;
+    padding: 20px 40px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.header-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.header-link:hover {
+    text-decoration: underline;
+}
+
+.header-buttons {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    display: flex;
+    gap: 12px;
+}
+
+#contrast-toggle {
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 2px solid #000;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#contrast-toggle:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.separator {
+    border: none;
+    height: 2px;
+    background-color: #000;
+    margin: 20px 0;
+}
+
+/* --- FORMULARZ --- */
 .form-box {
     width: 360px;
     margin: 60px auto;
@@ -27,11 +93,42 @@
     border: 2px solid #ccc;
     box-sizing: border-box;
 }
-/* zmiana koloru ramki po kliknięciu na wpisywanie do inputa */
+
 .field input:focus {
-    outline: none; /* usuwa domyślny focus */
-    border-color: #007BFF; /* niebieski lub inny kontrastowy kolor */
+    outline: none;
+    border-color: #007BFF;
     box-shadow: 0 0 0 2px rgba(0,123,255,0.3);
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#togglePassword::after {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 2px;
+    background: #000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    opacity: 0;
+}
+
+#togglePassword.hidden::after {
+    opacity: 1;
 }
 
 .submit-btn {
@@ -66,14 +163,40 @@
     text-decoration: underline;
 }
 
-/* HIGH CONTRAST */
+/* --- TRYB WYSOKIEGO KONTRASTU --- */
+body.high-contrast {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.high-contrast .wrapper, 
 .high-contrast .form-box {
-    background: #000;
+    background-color: #000 !important;
+}
+
+.high-contrast .separator {
+    background-color: #fff;
+}
+
+.high-contrast #contrast-toggle {
+    background-color: #fff !important;
+    color: #000 !important;
+    border-color: #fff !important;
+}
+
+.high-contrast .form-box {
+    border: 2px solid #00ff00;
+}
+
+.high-contrast .form-box h2, 
+.high-contrast label, 
+.high-contrast .login-links a {
+    color: #00ff00 !important;
 }
 
 .high-contrast .field input {
     background: #000;
-    color: #fff;
+    color: #00ff00;
     border-color: #00ff00;
 }
 
@@ -83,83 +206,14 @@
     border-color: #00ff00;
 }
 
-.high-contrast .login-links a {
+.high-contrast #togglePassword {
     color: #00ff00;
 }
-
-/* przycisk pokazania hasła */
-/* === POKAŻ / UKRYJ HASŁO === */
-
-.password-wrapper {
-    position: relative;
-}
-
-.password-wrapper input {
-    padding-right: 42px;
-}
-
-#togglePassword {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-/* przekreślenie oka */
-#togglePassword::after {
-    content: "";
-    position: absolute;
-    width: 22px;
-    height: 2px;
-    background: #000;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    opacity: 0;
-}
-
-/* hasło UKRYTE */
-#togglePassword.hidden::after {
-    opacity: 1;
-}
-
-/* ---------------------------------------- HIGH CONTRAST ----------------------------------------*/
 
 .high-contrast #togglePassword::after {
     background: #00ff00;
 }
-/* high contrast tekst (bo po kliknieciu robił sie czarny z czarnym nie było widac napisów)*/
-.high-contrast .form-box,
-.high-contrast .form-box h2,
-.high-contrast .form-box label,
-.high-contrast .form-box small,
-.high-contrast .form-box a {
-    color: #00ff00;
-}
-/* High Contrast – przycisk oka i kreska widoczne */
-.high-contrast #togglePassword {
-    color: #00ff00; /* ikona oka */
-}
 
-.high-contrast #togglePassword::after {
-    background: #00ff00; /* kreska przy ukrytym haśle */
-}
-/* tekst w boxach do wpisania danych zrobiony na zielony */
-.high-contrast .field input {
-    background: #000;      /* tło pola*/
-    color: #00ff00;        /* tekst w polu */     /* :) */
-    border-color: #00ff00;  /* ramka pola */
-}
-/* zmiana koloru ramki po kliknieciu w input w high contrast */
-.high-contrast .field input:focus {
-    border-color: #FFD700; /* np. jasny żółty */
-    box-shadow: 0 0 0 2px rgba(255,215,0,0.5); /* lekki efekt glow */
-    outline: none;
-}
-.high-contrast .wrapper {
-    background-color: #000;
+.high-contrast .header-link {
+    color: #fff;
 }

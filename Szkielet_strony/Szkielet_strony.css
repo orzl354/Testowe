@@ -1,17 +1,84 @@
+/* --- STYLE OGÓLNE --- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #000;
+    background-color: #fff;
+}
+
+.wrapper {
+    max-width: auto;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- NAGŁÓWEK --- */
+header {
+    position: relative;
+    padding: 20px 40px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.header-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.header-link:hover {
+    text-decoration: underline;
+}
+
+.header-buttons {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    display: flex;
+    gap: 12px;
+}
+
+/* --- PRZYCISKI W NAGŁÓWKU --- */
+#contrast-toggle, .logowanie-button {
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 2px solid #000;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.2s;
+    display: inline-block;
+}
+
+#contrast-toggle:hover, .logowanie-button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.separator {
+    border: none;
+    height: 2px;
+    background-color: #000;
+    margin: 20px 0;
+}
+
+/* --- SEKCJA OKIEN (MAIN) --- */
 .okna {
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
-
-    max-width: 600px;   /* szerokość wszystkich okien */
+    max-width: 600px;
     margin: 30px auto;
 }
 
-/* POJEDYNCZE OKNO */
 .okno {
-    width: 100%;     /* szerokość okna */
-    margin: 0 auto;       /* wyśrodkowanie */
-
+    width: 100%;
     background-color: #ffffff;
     border: 2px solid #e6e6e6;
     border-radius: 15px;
@@ -23,154 +90,59 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* TYTUŁ W OKNIE */
 .okno h2 {
-    margin-bottom: 15px;
+    margin: 0 0 10px 0;
+    font-size: 22px;
 }
 
-/* OPIS */
 .okno p {
     margin: 0;
-    color: #000000;
+    color: #555;
 }
 
-/* HOVER – DELIKATNY, ELEGANCKI */
 .okno:hover {
     transform: translateY(-4px);
     box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.12);
 }
-/* Normalny wygląd */
-body {
-  color: #000;
 
-  
-}
-/* marginesy */
-.wrapper {
-    max-width: auto;
-    margin: 0 auto;
-    background-color: rgb(255, 255, 255);
-    padding: 20px;
-}
-
-/* Tryb wysokiego kontrastu */
-.high-contrast,
-.high-contrast body {
+/* --- TRYB WYSOKIEGO KONTRASTU (Ujednolicony) --- */
+body.high-contrast {
     background-color: #000 !important;
     color: #fff !important;
 }
-.high-contrast .okno {
-    background-color: #000;
-}
+
 .high-contrast .wrapper {
-    background-color: #000;
-    
+    background-color: #000 !important;
 }
 
-.high-contrast a {
-    color: #00ff00 !important;
-}
 .high-contrast .separator {
     background-color: #fff;
-
-}
-.high-contrast .header-buttons button {
-        color: #00ff00 !important;
-
-}
-/* ============================= */
-/* HIGH CONTRAST – HEADER */
-/* ============================= */
-
-.high-contrast header {
-    background-color: #000;
-    color: #fff;
 }
 
-.high-contrast header h1 {
-    color: #fff;
+.high-contrast #contrast-toggle, 
+.high-contrast .logowanie-button {
+    background-color: #fff !important;
+    color: #000 !important;
+    border-color: #fff !important;
 }
 
-
-/* cały nagłówek */
-header {
-    position: relative;
-    padding: 20px 40px;
-    text-align: center;
+/* Okna w wysokim kontraście */
+.high-contrast .okno {
+    background-color: #000 !important;
+    border: 2px solid #00ff00 !important;
+    box-shadow: none;
 }
 
-/* Tytuł na środku */
-header h1 {
-    margin: 0;
-}
-/* pozycjonowanie kontenera przycisków */
-.header-buttons {
-    position: absolute;
-    top: 20px;      /* odstęp od górnej krawędzi (na oko) */
-    right: 40px;    /* odstęp od prawej krawędzi (na oko) */
-
-    display: flex;
-    gap: 12px;      /* odstęp między przyciskami */
+.high-contrast .okno h2, 
+.high-contrast .okno p,
+.high-contrast .header-link {
+    color: #00ff00 !important;
 }
 
-/* Przycisk po prawej */
-#contrast-toggle {
-    padding: 10px 18px;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 8px;
-    border: 2px solid #000;
-    background-color: #fff;
-    color: #000;
-    cursor: pointer;
-    z-index: 1000;
-}
-/* Po najechaniu na przycisk jego kolor zmienia sie na czarny a napis na biały */
-#contrast-toggle:hover {
-    background-color: #000;
-    color: #fff;
-}
-/* Focus – dostępność */
-#contrast-toggle:focus {
-    outline: 3px solid #000000;
-    outline-offset: 2px;
-}
-/* Tryb wysokiego kontrastu */
-.high-contrast #contrast-toggle {
-    background-color: #fff;
-    color: #000;
-    border-color: #fff;
+.high-contrast .okno:hover {
+    border-color: #FFD700 !important; /* Żółty focus przy najechaniu */
 }
 
-/* linia pod nagłówkiem */
-.separator {
-    border: none;              
-    height: 2px;              
-    background-color: #000000; 
-    margin: 20px 0;
-}
-/* przycisk logowania (ten sam schemat co przy przycisku high contrast) */
-.logowanie-button {
-    padding: 10px 18px;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 8px;
-    border: 2px solid #000;
-    background-color: #fff;
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-/* Hover */
-.logowanie-button:hover {
-    background-color: #000;
-    color: #fff;
-}
-
-/* Focus – dostępność */
-.logowanie-button:focus {
-    outline: 3px solid #000;
-    outline-offset: 2px;
+.high-contrast a.header-link {
+    color: #fff !important;
 }

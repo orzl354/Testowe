@@ -1,69 +1,38 @@
+/* --- STYLE OGÓLNE --- */
 body {
-  color: #000;
-
-  
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #000;
+    background-color: #f2f2ee;
 }
+
 .wrapper {
     max-width: auto;
     margin: 0 auto;
-    background-color: rgb(255, 255, 255);
     padding: 20px;
 }
-.high-contrast,
-.high-contrast body {
-    background-color: #000 !important;
-    color: #fff !important;
-}
-/*to jest skopiowane trzeba to jeszcze poprawic */
 
-.high-contrast .okno {
-    background-color: #000;
-}
-.high-contrast .wrapper {
-    background-color: #000;
-    
-}
-
-.high-contrast a {
-    color: #00ff00 !important;
-}
-/*to jest skopiowane trzeba to jeszcze poprawic */
-/* ============================= */
-/* HIGH CONTRAST – HEADER */
-/* ============================= */
-
-.high-contrast header {
-    background-color: #000;
-    color: #fff;
-}
-
-.high-contrast header h1 {
-    color: #fff;
-}
-
-/* cały nagłówek */
+/* --- NAGŁÓWEK --- */
 header {
     position: relative;
     padding: 20px 40px;
     text-align: center;
 }
 
-/* Tytuł na środku */
-header h1 {
-    margin: 0;
-}
-/* pozycjonowanie kontenera przycisków */
+header h1 { margin: 0; font-size: 28px; }
+
+.header-link { color: inherit; text-decoration: none; }
+.header-link:hover { text-decoration: underline; }
+
 .header-buttons {
     position: absolute;
-    top: 20px;      /* odstęp od górnej krawędzi (na oko) */
-    right: 40px;    /* odstęp od prawej krawędzi (na oko) */
-
+    top: 20px;
+    right: 40px;
     display: flex;
-    gap: 12px;      /* odstęp między przyciskami */
+    gap: 12px;
 }
 
-/* Przycisk po prawej */
-#contrast-toggle {
+#contrast-toggle, .logowanie-button {
     padding: 10px 18px;
     font-size: 14px;
     font-weight: 600;
@@ -72,29 +41,75 @@ header h1 {
     background-color: #fff;
     color: #000;
     cursor: pointer;
-    z-index: 1000;
+    text-decoration: none;
+    transition: 0.2s;
 }
-/* Po najechaniu na przycisk jego kolor zmienia sie na czarny a napis na biały */
-#contrast-toggle:hover {
+
+#contrast-toggle:hover, .logowanie-button:hover {
     background-color: #000;
     color: #fff;
 }
-/* Focus – dostępność */
-#contrast-toggle:focus {
-    outline: 3px solid #000000;
-    outline-offset: 2px;
-}
-/* Tryb wysokiego kontrastu */
-.high-contrast #contrast-toggle {
-    background-color: #fff;
-    color: #000;
-    border-color: #fff;
-}
 
-/* linia pod nagłówkiem */
 .separator {
-    border: none;              
-    height: 2px;              
-    background-color: #000000; 
+    border: none;
+    height: 2px;
+    background-color: #000;
     margin: 20px 0;
 }
+
+/* --- TREŚĆ I TABELA --- */
+.info-box {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+th { background-color: #f8f8f8; font-weight: bold; }
+
+.disclaimer { font-size: 13px; color: #666; font-style: italic; margin-top: 20px; }
+
+/* --- HIGH CONTRAST --- */
+body.high-contrast { background-color: #000 !important; color: #fff !important; }
+
+.high-contrast .wrapper, .high-contrast .info-box { background-color: #000 !important; }
+
+.high-contrast .info-box { border: 2px solid #00ff00; box-shadow: none; }
+
+.high-contrast th, .high-contrast td {
+    border-color: #00ff00;
+    color: #00ff00;
+    background: #000;
+}
+
+.high-contrast .header-link, .high-contrast h2, .high-contrast .disclaimer {
+    color: #00ff00 !important;
+}
+
+.high-contrast .separator { background-color: #fff; }
+
+.high-contrast #contrast-toggle, .high-contrast .logowanie-button {
+    background-color: #fff !important;
+    color: #000 !important;
+    border-color: #fff !important;
+}
+
+.high-contrast a.header-link { color: #fff !important; }

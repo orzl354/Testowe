@@ -2,22 +2,23 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Logowanie</title>
+    <title>Logowanie - Nazwa strony</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="Logowanie.css">
 </head>
-<body>
 
+<body>
     <div class="wrapper">
 
         <header>
             <h1>
                 <a href="../Szkielet_strony/Szkielet_strony.html" class="header-link">
-                Dziennik ciśnienia tętniczego i pulsu z wizualizacją danych
+                    Dziennik ciśnienia tętniczego i pulsu z wizualizacją danych
                 </a>
             </h1>
 
             <div class="header-buttons">
-            <button id="contrast-toggle">High Contrast</button>
+                <button id="contrast-toggle">High Contrast</button>
             </div>
         </header>
 
@@ -28,7 +29,6 @@
                 <h2>Logowanie</h2>
 
                 <form id="logowanieForm" novalidate>
-
                     <div class="field">
                         <label for="email">E-mail</label>
                         <input type="email" id="email">
@@ -36,17 +36,15 @@
 
                     <div class="field password-field">
                         <label for="haslo">Hasło</label>
-
                         <div class="password-wrapper">
                             <input type="password" id="haslo">
                             <button type="button" id="togglePassword" aria-label="Pokaż hasło">
-                                👁 <!-- ikona oka wizualna do przycisku pokazania hasła -->
+                                👁
                             </button>
                         </div>
                     </div>
 
-
-                    <small class="error"></small>
+                    <small class="error" style="color: red; display: block; margin-bottom: 10px; min-height: 1em;"></small>
 
                     <button type="submit" class="submit-btn">
                         Zaloguj się
@@ -57,15 +55,12 @@
                     <a href="../Reset_hasla/Reset_hasla.html">
                         Nie pamiętasz hasła?
                     </a>
-
                     <a href="../Rejstracja/Zarejestruj_sie.html" class="register-link">
                         Nie masz konta? Zarejestruj się
                     </a>
                 </div>
-
             </section>
         </main>
-
     </div>
 
 <script src="Logowanie.js"></script>

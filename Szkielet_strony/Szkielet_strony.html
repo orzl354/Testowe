@@ -2,28 +2,32 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Nazwa strony</title>
-
+    <title>Dziennik Ciśnienia - Strona Główna</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="Szkielet_strony.css">
 </head>
 
 <body>
     <div class="wrapper">
-        <!-- TYTUŁ STRONY -->
+
         <header>
-            <h1>Dziennik ciśnienia tętniczego i pulsu z wizualizacją danych</h1>
-            <div class = "header-buttons">
-                <button id = "contrast-toggle"> High Contrast </button>
-                <a href="../Logowanie/Logowanie.html" class="logowanie-button" id="loginButton" > Zaloguj się</a>
+            <h1>
+                <a href="Szkielet_strony.html" class="header-link">
+                    Dziennik ciśnienia tętniczego i pulsu z wizualizacją danych
+                </a>
+            </h1>
+
+            <div class="header-buttons">
+                <button id="contrast-toggle">High Contrast</button>
+                <a href="../Logowanie/Logowanie.html" class="logowanie-button" id="loginButton">
+                    Zaloguj się
+                </a>
             </div>
         </header>
 
-        <hr class = "separator">
+        <hr class="separator">
 
-        <!-- GŁÓWNA ZAWARTOŚĆ -->
         <main>
-
             <section class="okna">
 
                 <a class="okno" href="../Instrukcja/Instrukcja.html">
@@ -36,19 +40,17 @@
 
                 <a class="okno" href="../Diagnoza/Diagnoza.html">
                     <h2>Czy choruję na nadciśnienie?</h2>
-                
                 </a>
 
-                <a class="okno" href="https://pacjent.gov.pl/zapobiegaj/cisnienie-pod-kontrola">
+                <a class="okno" href="https://pacjent.gov.pl/zapobiegaj/cisnienie-pod-kontrola" target="_blank">
                     <h2>Chcesz wiedzieć więcej?</h2>
                     <p>Kliknij w link do strony pacjent.gov</p>
-                
                 </a>
 
             </section>
-
         </main>
     </div>
+
 <script src="Szkielet_strony.js"></script>
 </body>
 </html>
