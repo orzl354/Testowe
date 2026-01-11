@@ -1,37 +1,28 @@
-
 <!DOCTYPE html>
 <html lang="pl">
-  
 <head>
-  <meta charset="UTF-8">
-
-  <title>Profilaktyka</title>
-
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <!--  Ikona w rogu przy nazwie-->
-    
-  <link rel="stylesheet" href="Statystyki.css">
-    <!--  Połączenie z plikiem css-->
-      
-    
-
+    <meta charset="UTF-8">
+    <title>Statystyki - Dziennik Ciśnienia</title>
+    <link rel="stylesheet" href="Statystyki.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+    <div class="wrapper">
+        <header>
+            <h1><a href="../Szkielet_strony/Szkielet_strony.html" class="header-link">Dziennik ciśnienia - Statystyki</a></h1>
+            <div class="header-buttons">
+                <button id="contrast-toggle">High Contrast</button>
+                <a href="../Panel_rejestracji/Panel_rejestracji.html" class="logowanie-button">+ Dodaj pomiar</a>
+            </div>
+        </header>
+        <hr class="separator">
 
-  <header>
-  <h1 align="center">Nasza strona</h1>
-  </header>
-
-    <main>
-      
-       <div class="Logowanie">
-    <a href="Logowanie.html">Logowanie</a>
-</div>
-
-  
-
-</main>
-   </body>
+        <main>
+            <div class="chart-container" style="position: relative; height:60vh; width:80vw; margin: auto;">
+                <canvas id="pressureChart"></canvas>
+            </div>
+        </main>
+    </div>
+    <script src="Statystyki.js"></script>
+</body>
 </html>
-  
-

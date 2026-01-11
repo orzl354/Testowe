@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Ustawienia - Dziennik Ciśnienia</title>
+    <link rel="stylesheet" href="Ustawienia.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <header>
+        <h1>
+            <a href="../Szkielet_strony/Szkielet_strony.html" class="header-link">
+                Dziennik ciśnienia tętniczego i pulsu
+            </a>
+        </h1>
+        <div class="header-buttons">
+            <button id="contrast-toggle">High Contrast</button>
+        </div>
+    </header>
+
+    <hr class="separator">
+
+    <main class="profile-layout">
+        <aside class="profile-menu">
+            <h3>Menu</h3>
+            <nav>
+                <a href="../Profil/Profil.html" class="menu-item">Profil</a>
+                <a href="../Statystyki/Statystyki.html" class="menu-item">Statystyki</a>
+                <a href="Ustawienia.html" class="menu-item active">Ustawienia</a>
+            </nav>
+            <button id="logoutBtn" class="logout-btn">Wyloguj się</button>
+        </aside>
+
+        <section class="settings-container">
+            <h2>Ustawienia konta</h2>
+
+            <form id="personalDataForm" class="settings-form">
+                <h3>Dane osobowe</h3>
+                <div class="field">
+                    <label for="edit-imie">Imię</label>
+                    <input type="text" id="edit-imie" required>
+                </div>
+                <div class="field">
+                    <label for="edit-nazwisko">Nazwisko</label>
+                    <input type="text" id="edit-nazwisko" required>
+                </div>
+                <div class="field">
+                    <label for="edit-wiek">Wiek</label>
+                    <input type="number" id="edit-wiek" required>
+                </div>
+                <div class="field">
+                    <label for="edit-email">E-mail</label>
+                    <input type="email" id="edit-email" required>
+                </div>
+                <button type="submit" class="save-btn">Zapisz dane</button>
+            </form>
+
+            <hr class="form-separator">
+
+            <form id="passwordChangeForm" class="settings-form">
+                <h3>Zmiana hasła</h3>
+                <div class="field">
+                    <label for="current-password">Aktualne hasło</label>
+                    <input type="password" id="current-password" required>
+                </div>
+                <div class="field">
+                    <label for="new-password">Nowe hasło</label>
+                    <input type="password" id="new-password" required>
+                </div>
+                <div class="field">
+                    <label for="confirm-password">Powtórz nowe hasło</label>
+                    <input type="password" id="confirm-password" required>
+                </div>
+                <p id="password-error" style="color: red; font-size: 14px;"></p>
+                <button type="submit" class="save-btn">Zmień hasło</button>
+            </form>
+        </section>
+    </main>
+</div>
+
+<script src="Ustawienia.js"></script>
+</body>
+</html>
