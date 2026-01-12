@@ -11,8 +11,7 @@
     <header>
         <h1>
             <a href="../Szkielet_strony/Szkielet_strony.html" class="header-link">
-                Dziennik ciśnienia tętniczego i pulsu
-            </a>
+                Twój dziennik ciśnienia tętniczego i pulsu</a>
         </h1>
         <div class="header-buttons">
             <button id="contrast-toggle">High Contrast</button>
@@ -34,7 +33,7 @@
 
         <section class="settings-container">
             <h2>Ustawienia konta</h2>
-
+            
             <form id="personalDataForm" class="settings-form">
                 <h3>Dane osobowe</h3>
                 <div class="field">
@@ -72,9 +71,17 @@
                     <label for="confirm-password">Powtórz nowe hasło</label>
                     <input type="password" id="confirm-password" required>
                 </div>
-                <p id="password-error" style="color: red; font-size: 14px;"></p>
+                <p id="password-error" style="color: red; font-size: 14px; min-height: 1.2em;"></p>
                 <button type="submit" class="save-btn">Zmień hasło</button>
             </form>
+
+            <hr class="form-separator">
+
+            <div class="danger-zone">
+                <h3>Usuń konto</h3>
+                <p>Usunięcie konta spowoduje bezpowrotne skasowanie Twoich danych oraz całej historii pomiarów ciśnienia.</p>
+                <button id="deleteAccountBtn" class="delete-btn">Usuń konto na zawsze</button>
+            </div>
         </section>
     </main>
 </div>

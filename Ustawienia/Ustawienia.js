@@ -7,82 +7,73 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // Wypełnij formularz obecnymi danymi
+    // Wypełnij dane na starcie
     document.getElementById("edit-imie").value = loggedUser.imie;
     document.getElementById("edit-nazwisko").value = loggedUser.nazwisko;
     document.getElementById("edit-wiek").value = loggedUser.wiek;
     document.getElementById("edit-email").value = loggedUser.email;
 
-    // 1. ZMIANA DANYCH OSOBOWYCH
-    const personalForm = document.getElementById("personalDataForm");
-    personalForm.addEventListener("submit", (e) => {
+    // ZMIANA DANYCH
+    document.getElementById("personalDataForm").addEventListener("submit", (e) => {
         e.preventDefault();
-
-        const updatedEmail = document.getElementById("edit-email").value.trim().toLowerCase();
-        
-        // Znajdź użytkownika w głównej tablicy
         const userIndex = users.findIndex(u => u.email === loggedUser.email);
-
         if (userIndex !== -1) {
-            // Aktualizujemy dane w tablicy wszystkich użytkowników
             users[userIndex].imie = document.getElementById("edit-imie").value;
             users[userIndex].nazwisko = document.getElementById("edit-nazwisko").value;
             users[userIndex].wiek = document.getElementById("edit-wiek").value;
-            users[userIndex].email = updatedEmail;
+            users[userIndex].email = document.getElementById("edit-email").value.toLowerCase();
 
-            // Aktualizujemy sesję (loggedUser)
-            localStorage.setItem("loggedUser", JSON.stringify(users[userIndex]));
             localStorage.setItem("users", JSON.stringify(users));
-
-            alert("Dane zostały zaktualizowane!");
+            localStorage.setItem("loggedUser", JSON.stringify(users[userIndex]));
+            alert("Dane zaktualizowane!");
         }
     });
 
-    // 2. ZMIANA HASŁA
-    const passwordForm = document.getElementById("passwordChangeForm");
-    const passError = document.getElementById("password-error");
-
-    passwordForm.addEventListener("submit", (e) => {
+    // ZMIANA HASŁA
+    document.getElementById("passwordChangeForm").addEventListener("submit", (e) => {
         e.preventDefault();
-        passError.textContent = "";
+        const err = document.getElementById("password-error");
+        const currentP = document.getElementById("current-password").value;
+        const newP = document.getElementById("new-password").value;
+        const confirmP = document.getElementById("confirm-password").value;
 
-        const currentPass = document.getElementById("current-password").value;
-        const newPass = document.getElementById("new-password").value;
-        const confirmPass = document.getElementById("confirm-password").value;
-
-        if (currentPass !== loggedUser.haslo) {
-            passError.textContent = "Aktualne hasło jest nieprawidłowe.";
-            return;
-        }
-
-        if (newPass !== confirmPass) {
-            passError.textContent = "Nowe hasła nie są identyczne.";
-            return;
-        }
+        if (currentP !== loggedUser.haslo) { err.textContent = "Błędne aktualne hasło!"; return; }
+        if (newP !== confirmP) { err.textContent = "Hasła nie są identyczne!"; return; }
 
         const userIndex = users.findIndex(u => u.email === loggedUser.email);
-        if (userIndex !== -1) {
-            users[userIndex].haslo = newPass;
-            localStorage.setItem("users", JSON.stringify(users));
-            
-            // Aktualizujemy też hasło w bieżącej sesji
-            loggedUser.haslo = newPass;
-            localStorage.setItem("loggedUser", JSON.stringify(loggedUser));
+        users[userIndex].haslo = newP;
+        localStorage.setItem("users", JSON.stringify(users));
+        loggedUser.haslo = newP;
+        localStorage.setItem("loggedUser", JSON.stringify(loggedUser));
+        alert("Hasło zmienione!");
+        e.target.reset();
+        err.textContent = "";
+    });
 
-            alert("Hasło zostało zmienione!");
-            passwordForm.reset();
+    // USUWANIE KONTA
+    document.getElementById("deleteAccountBtn").addEventListener("click", () => {
+        if (confirm("Czy na pewno chcesz trwale usunąć konto i wszystkie pomiary?")) {
+            const updatedUsers = users.filter(u => u.email !== loggedUser.email);
+            localStorage.setItem("users", JSON.stringify(updatedUsers));
+
+            const measurements = JSON.parse(localStorage.getItem("measurements")) || [];
+            const updatedMeasures = measurements.filter(m => m.userEmail !== loggedUser.email);
+            localStorage.setItem("measurements", JSON.stringify(updatedMeasures));
+
+            localStorage.removeItem("loggedUser");
+            window.location.href = "../Szkielet_strony/Szkielet_strony.html";
         }
     });
 
-    // 3. WYLOGUJ I KONTRAST (Kopiujemy logikę z Profil.js)
-    document.getElementById("logoutBtn").addEventListener("click", () => {
-        localStorage.removeItem("loggedUser");
-        window.location.href = "../Logowanie/Logowanie.html";
-    });
-
+    // CONTRAST & LOGOUT
     if (localStorage.getItem("highContrast") === "true") document.body.classList.add("high-contrast");
     document.getElementById("contrast-toggle").addEventListener("click", () => {
         document.body.classList.toggle("high-contrast");
         localStorage.setItem("highContrast", document.body.classList.contains("high-contrast"));
+    });
+
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+        localStorage.removeItem("loggedUser");
+        window.location.href = "../Logowanie/Logowanie.html";
     });
 });
