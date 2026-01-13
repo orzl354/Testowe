@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // ===== HIGH CONTRAST =====
     const contrastButton = document.getElementById('contrast-toggle');
 
-    // Sprawdź czy tryb był włączony
     if (localStorage.getItem('highContrast') === 'true') {
         document.body.classList.add('high-contrast');
     }
@@ -16,14 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ===== LOGOWANIE / UŻYTKOWNIK =====
+    // LOGOWANIE  
     const loginButton = document.getElementById("loginButton");
     const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
 
-    // Jeśli w localStorage jest zalogowany użytkownik, zmień przycisk
     if (loginButton && loggedUser) {
         loginButton.textContent = `${loggedUser.imie} ${loggedUser.nazwisko}`;
-        loginButton.href = "../Profil/Profil.html"; // Kieruj do profilu zamiast do logowania
+        loginButton.href = "../Profil/Profil.html";
     }
-
 });

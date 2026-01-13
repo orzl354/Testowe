@@ -1,12 +1,11 @@
 /* --- STYLE PODSTAWOWE --- */
 body {
     margin: 0;
+    padding: 20px; /* Przeniesione z usuniętego wrappera */
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
     color: #111;
 }
-
-.wrapper { padding: 20px; }
 
 header { position: relative; text-align: center; padding: 20px 40px; }
 
@@ -23,8 +22,8 @@ header { position: relative; text-align: center; padding: 20px 40px; }
     cursor: pointer;
 }
 
-/* Linia pod nagłówkiem w trybie jasnym */
-.separator { 
+/* Zmieniono nazwę z separator na linia */
+.linia { 
     border: none; 
     height: 2px; 
     background: #000; 
@@ -119,7 +118,7 @@ header { position: relative; text-align: center; padding: 20px 40px; }
 
 .form-separator { border: 0; border-top: 1px solid #eee; margin: 40px 0; }
 
-/* --- STREFA NIEBEZPIECZNA (DANGER ZONE) --- */
+/* --- STREFA NIEBEZPIECZNA --- */
 .danger-zone {
     margin-top: 40px;
     padding: 20px;
@@ -159,8 +158,8 @@ header { position: relative; text-align: center; padding: 20px 40px; }
 /* --- TRYB WYSOKIEGO KONTRASTU --- */
 body.high-contrast { background-color: #000 !important; color: #fff !important; }
 
-/* Poprawka linii separatora - teraz będzie biała na czarnym tle */
-.high-contrast .separator { 
+/* Zmieniono z .separator na .linia */
+.high-contrast .linia { 
     background-color: #fff !important; 
 }
 
@@ -182,7 +181,6 @@ body.high-contrast { background-color: #000 !important; color: #fff !important; 
 .high-contrast .menu-item.active { background: #00ff00; color: #000; }
 .high-contrast .header-link { color: #fff !important; }
 
-/* Danger Zone w wysokim kontraście */
 .high-contrast .danger-zone {
     background-color: #000 !important;
     border: 2px solid #ff0000 !important;

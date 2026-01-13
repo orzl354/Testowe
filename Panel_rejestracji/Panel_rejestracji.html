@@ -4,43 +4,40 @@
     <meta charset="UTF-8">
     <title>Dodaj Pomiar - Dziennik Ciśnienia</title>
     <link rel="stylesheet" href="Panel_rejestracji.css">
+    <script src="Panel_rejestracji.js"></script>
+
 </head>
 <body>
-    <div class="wrapper">
-        <header>
-            <h1>
-                <a href="../Szkielet_strony/Szkielet_strony.html" class="header-link">
- Twój dziennik ciśnienia tętniczego i pulsu </a>
-            </h1>
-            <div class="header-buttons">
-                <button id="contrast-toggle">High Contrast</button>
-                <a href="../Profil/Profil.html" class="logowanie-button" id="userName">Użytkownik</a>
-            </div>
-        </header>
+    <header>
+        <h1>
+            <a href="../Szkielet_strony/Szkielet_strony.html" class="header-link">Twój dziennik ciśnienia tętniczego i pulsu</a>
+        </h1>
+        <div class="header-buttons">
+            <button id="contrast-toggle">High Contrast</button>
+            <a href="../Profil/Profil.html" class="logowanie-button" id="userName">Użytkownik</a>
+        </div>
+    </header>
 
-        <hr class="separator">
+    <hr class="linia"> <main>
+        <section class="form-box">
+            <h2>Nowy Pomiar</h2>
+            <form id="rejestracjaCisnieniaForm">
+                <div class="field">
+                    <label for="sys">Ciśnienie skurczowe (SYS) [mmHg]</label>
+                    <input type="number" id="sys" placeholder="np. 120" required>
+                </div>
+                <div class="field">
+                    <label for="dia">Ciśnienie rozkurczowe (DIA) [mmHg]</label>
+                    <input type="number" id="dia" placeholder="np. 80" required>
+                </div>
+                <div class="field">
+                    <label for="pulse">Puls (PPM) [uderz./min]</label>
+                    <input type="number" id="pulse" placeholder="np. 70" required>
+                </div>
+                <button type="submit" class="submit-btn">Zapisz i zobacz statystyki</button>
+            </form>
+        </section>
+    </main>
 
-        <main>
-            <section class="form-box">
-                <h2>Nowy Pomiar</h2>
-                <form id="rejestracjaCisnieniaForm">
-                    <div class="field">
-                        <label for="sys">Ciśnienie skurczowe (SYS) [mmHg]</label>
-                        <input type="number" id="sys" placeholder="np. 120" required>
-                    </div>
-                    <div class="field">
-                        <label for="dia">Ciśnienie rozkurczowe (DIA) [mmHg]</label>
-                        <input type="number" id="dia" placeholder="np. 80" required>
-                    </div>
-                    <div class="field">
-                        <label for="pulse">Puls (PPM) [uderz./min]</label>
-                        <input type="number" id="pulse" placeholder="np. 70" required>
-                    </div>
-                    <button type="submit" class="submit-btn">Zapisz i zobacz statystyki</button>
-                </form>
-            </section>
-        </main>
-    </div>
-    <script src="Panel_rejestracji.js"></script>
 </body>
 </html>

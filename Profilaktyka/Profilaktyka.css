@@ -1,16 +1,13 @@
 /* --- STYLE OGÓLNE --- */
 body {
     margin: 0;
+    padding: 20px; /* Przeniesione z usuniętego wrappera */
     font-family: Arial, sans-serif;
     color: #000;
     background-color: #f2f2ee;
 }
 
-.wrapper {
-    padding: 20px;
-}
-
-/* --- NAGŁÓWEK (Standard) --- */
+/* --- NAGŁÓWEK --- */
 header {
     position: relative;
     padding: 20px 40px;
@@ -48,7 +45,8 @@ header h1 { margin: 0; font-size: 28px; }
     color: #fff;
 }
 
-.separator {
+/* Zmieniono nazwę z .separator na .linia */
+.linia {
     border: none;
     height: 2px;
     background-color: #000;
@@ -75,7 +73,7 @@ ul {
     line-height: 1.8;
 }
 
-/* --- HIGH CONTRAST --- */
+/* --- TRYB WYSOKIEGO KONTRASTU --- */
 body.high-contrast {
     background-color: #000 !important;
     color: #fff !important;
@@ -94,7 +92,10 @@ body.high-contrast {
     color: #00ff00 !important;
 }
 
-.high-contrast .separator { background-color: #fff; }
+/* Zaktualizowano nazwę klasy w trybie wysokiego kontrastu */
+.high-contrast .linia { 
+    background-color: #fff; 
+}
 
 .high-contrast #contrast-toggle, .high-contrast .logowanie-button {
     background-color: #fff !important;

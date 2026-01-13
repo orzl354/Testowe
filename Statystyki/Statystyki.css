@@ -1,15 +1,11 @@
 /* --- STYLE OGÓLNE --- */
 body {
-    margin: 0;
+    margin: 0 auto; /* Wyśrodkowanie całej strony */
+    max-width: 1200px; /* Przeniesione z .wrapper */
+    padding: 20px;     /* Przeniesione z .wrapper */
     font-family: Arial, sans-serif;
     color: #000;
     background-color: #fff;
-}
-
-.wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
 }
 
 /* --- NAGŁÓWEK --- */
@@ -55,7 +51,8 @@ header h1 {
     color: #fff;
 }
 
-.separator {
+/* Zmieniono nazwę klasy z .separator na .linia */
+.linia {
     border: none;
     height: 2px;
     background-color: #000;
@@ -78,7 +75,8 @@ body.high-contrast {
     color: #fff !important;
 }
 
-.high-contrast .separator {
+/* Zaktualizowano nazwę klasy w trybie wysokiego kontrastu */
+.high-contrast .linia {
     background-color: #fff;
 }
 

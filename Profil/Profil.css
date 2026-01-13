@@ -1,13 +1,10 @@
 /* --- STYLE OGÓLNE --- */
 body {
     margin: 0;
+    padding: 20px; /* Przeniesione z usuniętego wrappera */
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
     color: #111;
-}
-
-.wrapper {
-    padding: 20px;
 }
 
 /* --- NAGŁÓWEK --- */
@@ -45,7 +42,8 @@ header {
     color: #fff;
 }
 
-.separator {
+/* Zmieniono nazwę z .separator na .linia */
+.linia {
     border: none;
     height: 2px;
     background: #000;
@@ -194,5 +192,6 @@ body.high-contrast {
     color: #000;
 }
 
-.high-contrast .separator { background-color: #fff; }
+/* Zaktualizowano z .separator na .linia */
+.high-contrast .linia { background-color: #fff; }
 .high-contrast .header-link { color: #fff !important; }
