@@ -1,15 +1,10 @@
 /* --- STYLE OGÓLNE --- */
 body {
     margin: 0;
+    padding: 20px; /* Przeniesione z wrappera */
     font-family: Arial, sans-serif;
     color: #000;
     background-color: #f2f2ee;
-}
-
-.wrapper {
-    max-width: auto;
-    margin: 0 auto;
-    padding: 20px;
 }
 
 /* --- NAGŁÓWEK --- */
@@ -57,7 +52,8 @@ header h1 {
     color: #fff;
 }
 
-.separator {
+/* Zmieniono nazwę na .linia */
+.linia {
     border: none;
     height: 2px;
     background-color: #000;
@@ -94,8 +90,6 @@ body.high-contrast {
     color: #fff !important;
 }
 
-.high-contrast .wrapper { background-color: #000 !important; }
-
 .high-contrast .info-box {
     background-color: #000 !important;
     border: 2px solid #00ff00;
@@ -109,7 +103,8 @@ body.high-contrast {
     color: #00ff00 !important;
 }
 
-.high-contrast .separator { background-color: #fff; }
+/* Zmieniono na .linia */
+.high-contrast .linia { background-color: #fff; }
 
 .high-contrast #contrast-toggle, 
 .high-contrast .logowanie-button {

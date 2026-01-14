@@ -1,15 +1,10 @@
 /* --- STYLE OGÓLNE --- */
 body {
     margin: 0;
+    padding: 20px; /* Przeniesione z usuniętego wrappera */
     font-family: Arial, sans-serif;
     color: #000;
     background-color: #fff;
-}
-
-.wrapper {
-    max-width: auto;
-    margin: 0 auto;
-    padding: 20px;
 }
 
 /* --- NAGŁÓWEK --- */
@@ -56,7 +51,8 @@ header h1 {
     color: #fff;
 }
 
-.separator {
+/* Zmieniono z .separator na .linia */
+.linia {
     border: none;
     height: 2px;
     background-color: #000;
@@ -129,18 +125,19 @@ header h1 {
     color: #fff;
 }
 
-/* --- TRYB WYSOKIEGO KONTRASTU (Standard) --- */
+/* --- TRYB WYSOKIEGO KONTRASTU --- */
 body.high-contrast {
     background-color: #000 !important;
     color: #fff !important;
 }
 
-.high-contrast .wrapper, 
 .high-contrast .form-box {
     background-color: #000 !important;
+    border: 2px solid #00ff00;
 }
 
-.high-contrast .separator {
+/* Zmieniono na .linia */
+.high-contrast .linia {
     background-color: #fff;
 }
 
@@ -148,10 +145,6 @@ body.high-contrast {
     background-color: #fff !important;
     color: #000 !important;
     border-color: #fff !important;
-}
-
-.high-contrast .form-box {
-    border: 2px solid #00ff00;
 }
 
 .high-contrast .form-box h2, 

@@ -1,18 +1,13 @@
 /* --- STYLE OGÓLNE --- */
 body {
     margin: 0;
+    padding: 20px; /* Przeniesione z usuniętego wrappera */
     font-family: Arial, sans-serif;
     color: #000;
     background-color: #fff;
 }
 
-.wrapper {
-    max-width: auto;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* --- NAGŁÓWEK (Identyczny jak w Szkielet_strony) --- */
+/* --- NAGŁÓWEK --- */
 header {
     position: relative;
     padding: 20px 40px;
@@ -58,7 +53,8 @@ header h1 {
     color: #fff;
 }
 
-.separator {
+/* Zmieniono z .separator na .linia */
+.linia {
     border: none;
     height: 2px;
     background-color: #000;
@@ -140,6 +136,7 @@ header h1 {
     background: #fff;
     font-weight: bold;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .submit-btn:hover {
@@ -169,12 +166,8 @@ body.high-contrast {
     color: #fff !important;
 }
 
-.high-contrast .wrapper, 
-.high-contrast .form-box {
-    background-color: #000 !important;
-}
-
-.high-contrast .separator {
+/* Zaktualizowano na .linia */
+.high-contrast .linia {
     background-color: #fff;
 }
 
@@ -185,7 +178,9 @@ body.high-contrast {
 }
 
 .high-contrast .form-box {
+    background-color: #000 !important;
     border: 2px solid #00ff00;
+    box-shadow: none;
 }
 
 .high-contrast .form-box h2, 

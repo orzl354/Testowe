@@ -1,15 +1,10 @@
 /* --- STYLE OGÓLNE --- */
 body {
     margin: 0;
+    padding: 20px; /* Przeniesione z usuniętego wrappera */
     font-family: Arial, sans-serif;
     color: #000;
     background-color: #f2f2ee;
-}
-
-.wrapper {
-    max-width: auto;
-    margin: 0 auto;
-    padding: 20px;
 }
 
 /* --- NAGŁÓWEK --- */
@@ -50,7 +45,8 @@ header h1 { margin: 0; font-size: 28px; }
     color: #fff;
 }
 
-.separator {
+/* Zmieniono z .separator na .linia */
+.linia {
     border: none;
     height: 2px;
     background-color: #000;
@@ -90,9 +86,11 @@ th { background-color: #f8f8f8; font-weight: bold; }
 /* --- HIGH CONTRAST --- */
 body.high-contrast { background-color: #000 !important; color: #fff !important; }
 
-.high-contrast .wrapper, .high-contrast .info-box { background-color: #000 !important; }
-
-.high-contrast .info-box { border: 2px solid #00ff00; box-shadow: none; }
+.high-contrast .info-box { 
+    background-color: #000 !important; 
+    border: 2px solid #00ff00; 
+    box-shadow: none; 
+}
 
 .high-contrast th, .high-contrast td {
     border-color: #00ff00;
@@ -104,7 +102,8 @@ body.high-contrast { background-color: #000 !important; color: #fff !important; 
     color: #00ff00 !important;
 }
 
-.high-contrast .separator { background-color: #fff; }
+/* Zmieniono na .linia */
+.high-contrast .linia { background-color: #fff; }
 
 .high-contrast #contrast-toggle, .high-contrast .logowanie-button {
     background-color: #fff !important;
