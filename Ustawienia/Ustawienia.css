@@ -1,7 +1,7 @@
 /* --- STYLE PODSTAWOWE --- */
 body {
     margin: 0;
-    padding: 20px; /* Przeniesione z usuniętego wrappera */
+    padding: 20px; 
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
     color: #111;
@@ -22,7 +22,6 @@ header { position: relative; text-align: center; padding: 20px 40px; }
     cursor: pointer;
 }
 
-/* Zmieniono nazwę z separator na linia */
 .linia { 
     border: none; 
     height: 2px; 
@@ -31,7 +30,7 @@ header { position: relative; text-align: center; padding: 20px 40px; }
 }
 
 /* --- LAYOUT --- */
-.profile-layout {
+.profil-layout {
     display: grid;
     grid-template-columns: 260px 1fr;
     gap: 40px;
@@ -40,7 +39,7 @@ header { position: relative; text-align: center; padding: 20px 40px; }
 }
 
 /* --- MENU BOCZNE --- */
-.profile-menu {
+.profil-menu {
     background: #fff;
     border-radius: 16px;
     padding: 25px;
@@ -119,7 +118,7 @@ header { position: relative; text-align: center; padding: 20px 40px; }
 .form-separator { border: 0; border-top: 1px solid #eee; margin: 40px 0; }
 
 /* --- STREFA NIEBEZPIECZNA --- */
-.danger-zone {
+.Usun_konto {
     margin-top: 40px;
     padding: 20px;
     border: 1px solid #ffcccc;
@@ -127,13 +126,13 @@ header { position: relative; text-align: center; padding: 20px 40px; }
     background-color: #fff5f5;
 }
 
-.danger-zone h3 {
+.Usun_konto h3 {
     color: #c00000 !important;
     border-bottom: none;
     margin-top: 0;
 }
 
-.danger-zone p {
+.Usun_konto p {
     font-size: 14px;
     color: #666;
     margin-bottom: 20px;
@@ -158,12 +157,11 @@ header { position: relative; text-align: center; padding: 20px 40px; }
 /* --- TRYB WYSOKIEGO KONTRASTU --- */
 body.high-contrast { background-color: #000 !important; color: #fff !important; }
 
-/* Zmieniono z .separator na .linia */
 .high-contrast .linia { 
     background-color: #fff !important; 
 }
 
-.high-contrast .profile-menu,
+.high-contrast .profil-menu,
 .high-contrast .settings-container {
     background-color: #000 !important;
     border: 2px solid #00ff00;
@@ -181,13 +179,13 @@ body.high-contrast { background-color: #000 !important; color: #fff !important; 
 .high-contrast .menu-item.active { background: #00ff00; color: #000; }
 .high-contrast .header-link { color: #fff !important; }
 
-.high-contrast .danger-zone {
+.high-contrast .Usun_konto {
     background-color: #000 !important;
     border: 2px solid #ff0000 !important;
 }
 
-.high-contrast .danger-zone h3,
-.high-contrast .danger-zone p {
+.high-contrast .Usun_konto h3,
+.high-contrast .Usun_konto p {
     color: #ff0000 !important;
 }
 
