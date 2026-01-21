@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const colorSYS = isHC ? "#00ff00" : "#ff4d4d";
     const colorDIA = isHC ? "#00ffff" : "#4d79ff";
     const textColor = isHC ? "#00ff00" : "#000000";
+    const gridColor = isHC ? "#fff" : "#cccccc";
 
     // Inicjalizacja wykresu
     const ctx = document.getElementById('pressureChart').getContext('2d');
@@ -56,19 +57,35 @@ document.addEventListener("DOMContentLoaded", () => {
             responsive: true,
             scales: {
                 x: { 
-                    display: true, 
-                    title: { display: true, text: 'Data pomiaru', color: textColor },
-                    ticks: { color: textColor }
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Data pomiaru',
+                        color: textColor
+                    },
+                    ticks: { color: textColor },
+                    grid: {
+                        color: gridColor
+                    }
                 },
                 y: { 
-                    position: 'right', // Skala po prawej stronie
-                    display: true, 
-                    title: { display: true, text: 'mmHg', color: textColor },
-                    ticks: { color: textColor }
+                    position: 'right',
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'mmHg',
+                        color: textColor
+                    },
+                    ticks: { color: textColor },
+                    grid: {
+                        color: gridColor
+                    }
                 }
             },
             plugins: {
-                legend: { labels: { color: textColor } }
+                legend: {
+                    labels: { color: textColor }
+                }
             }
         }
     });

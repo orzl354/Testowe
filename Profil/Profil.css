@@ -22,7 +22,7 @@ header {
 .header-link:hover { text-decoration: underline; }
 
 .header-buttons {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 40px;
 }
