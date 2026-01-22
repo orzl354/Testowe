@@ -154,6 +154,19 @@ header { position: relative; text-align: center; padding: 20px 40px; }
     color: #fff;
 }
 
+/* --- STOPKA --- */
+footer {
+    text-align: center;
+    padding-bottom: 20px;
+    margin-top: 40px; /* Odstęp od kafelków */
+}
+
+.stopka-tresc p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666; 
+}
+
 /* --- TRYB WYSOKIEGO KONTRASTU --- */
 body.high-contrast { background-color: #000 !important; color: #fff !important; }
 
@@ -193,4 +206,12 @@ body.high-contrast { background-color: #000 !important; color: #fff !important; 
     background-color: #ff0000 !important;
     color: #000 !important;
     border-color: #ff0000 !important;
+}
+
+.high-contrast .stopka-tresc p {
+    color: #00ff00 !important; /* Zielony tekst w trybie kontrastu */
+}
+
+.high-contrast .stopka-tresc a {
+    color: #00ff00 !important;
 }

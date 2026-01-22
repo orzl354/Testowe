@@ -73,6 +73,19 @@ ul {
     line-height: 1.8;
 }
 
+/* --- STOPKA --- */
+footer {
+    text-align: center;
+    padding-bottom: 20px;
+    margin-top: 40px; /* Odstęp od kafelków */
+}
+
+.stopka-tresc p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666; 
+}
+
 /* --- TRYB WYSOKIEGO KONTRASTU --- */
 body.high-contrast {
     background-color: #000 !important;
@@ -104,3 +117,11 @@ body.high-contrast {
 }
 
 .high-contrast a.header-link { color: #fff !important; }
+
+.high-contrast .stopka-tresc p {
+    color: #00ff00 !important; /* Zielony tekst w trybie kontrastu */
+}
+
+.high-contrast .stopka-tresc a {
+    color: #00ff00 !important;
+}

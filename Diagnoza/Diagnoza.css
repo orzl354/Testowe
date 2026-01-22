@@ -83,6 +83,19 @@ th { background-color: #f8f8f8; font-weight: bold; }
 
 .disclaimer { font-size: 13px; color: #666; font-style: italic; margin-top: 20px; }
 
+/* --- STOPKA --- */
+footer {
+    text-align: center;
+    padding-bottom: 20px;
+    margin-top: 40px; /* Odstęp od kafelków */
+}
+
+.stopka-tresc p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666; 
+}
+
 /* --- HIGH CONTRAST --- */
 body.high-contrast { background-color: #000 !important; color: #fff !important; }
 
@@ -112,3 +125,10 @@ body.high-contrast { background-color: #000 !important; color: #fff !important; 
 }
 
 .high-contrast a.header-link { color: #fff !important; }
+.high-contrast .stopka-tresc p {
+    color: #00ff00 !important; /* Zielony tekst w trybie kontrastu */
+}
+
+.high-contrast .stopka-tresc a {
+    color: #00ff00 !important;
+}

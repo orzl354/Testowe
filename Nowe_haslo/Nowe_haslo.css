@@ -124,7 +124,18 @@ header h1 {
     background: #000;
     color: #fff;
 }
+/* --- STOPKA --- */
+footer {
+    text-align: center;
+    padding-bottom: 20px;
+    margin-top: 40px; /* Odstęp od kafelków */
+}
 
+.stopka-tresc p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666; 
+}
 /* --- TRYB WYSOKIEGO KONTRASTU --- */
 body.high-contrast {
     background-color: #000 !important;
@@ -172,4 +183,12 @@ body.high-contrast {
 
 .high-contrast .header-link {
     color: #fff;
+}
+
+.high-contrast .stopka-tresc p {
+    color: #00ff00 !important; /* Zielony tekst w trybie kontrastu */
+}
+
+.high-contrast .stopka-tresc a {
+    color: #00ff00 !important;
 }
