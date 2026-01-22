@@ -5,7 +5,7 @@
     <title>Statystyki - Dziennik Ciśnienia</title>
     <link rel="stylesheet" href="Statystyki.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src="Statystyki.js"></script>
+    <script src="Statystyki.js"></script>
 </head>
 <body>
     <header>
@@ -18,9 +18,34 @@
         </div>
     </header>
 
-    <hr class="linia"> <main>
-        <div class="chart-container" style="position: relative; height:60vh; width:80vw; margin: auto;">
-            <canvas id="pressureChart"></canvas>
+    <hr class="linia"> 
+
+    <main>
+        <div class="content-wrapper">
+            
+            <div class="chart-container">
+                <canvas id="pressureChart"></canvas>
+            </div>
+
+            <div class="stats-panel">
+                <h2>Średnie wyniki</h2>
+                <div class="stat-item">
+                    <span class="stat-label">Ciśnienie Skurczowe (SYS)</span>
+                    <span class="stat-value" id="avg-sys">--</span>
+                    <span class="stat-unit">mmHg</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Ciśnienie Rozkurczowe (DIA)</span>
+                    <span class="stat-value" id="avg-dia">--</span>
+                    <span class="stat-unit">mmHg</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Puls</span>
+                    <span class="stat-value" id="avg-pulse">--</span>
+                    <span class="stat-unit">BPM</span>
+                </div>
+            </div>
+
         </div>
     </main>
 

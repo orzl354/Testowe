@@ -1,8 +1,8 @@
 /* --- STYLE OGÓLNE --- */
 body {
-    margin: 0 auto; /* Wyśrodkowanie całej strony */
-    max-width: 1200px; /* Przeniesione z .wrapper */
-    padding: 20px;     /* Przeniesione z .wrapper */
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
     font-family: Arial, sans-serif;
     color: #000;
     background-color: #fff;
@@ -51,7 +51,6 @@ header h1 {
     color: #fff;
 }
 
-/* Zmieniono nazwę klasy z .separator na .linia */
 .linia {
     border: none;
     height: 2px;
@@ -59,14 +58,68 @@ header h1 {
     margin: 20px 0;
 }
 
+/* --- UKŁAD GŁÓWNY (NOWE) --- */
+.content-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start; /* Wyrównanie do góry */
+    flex-wrap: wrap; /* Zawijanie na mniejszych ekranach */
+}
+
 /* --- KONTENER WYKRESU --- */
 .chart-container {
+    flex: 3; /* Wykres zajmuje więcej miejsca (3/4) */
     background-color: #ffffff;
     border: 2px solid #e6e6e6;
     border-radius: 15px;
-    padding: 30px;
-    margin: 40px auto;
+    padding: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+    min-height: 50vh;
+}
+
+/* --- PANEL STATYSTYK (NOWE) --- */
+.stats-panel {
+    flex: 1; /* Panel zajmuje mniej miejsca (1/4) */
+    background-color: #ffffff;
+    border: 2px solid #e6e6e6;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 200px;
+}
+
+.stats-panel h2 {
+    margin-top: 0;
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 2px solid #e6e6e6;
+    padding-bottom: 10px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 32px;
+    font-weight: bold;
+    color: #000;
+}
+
+.stat-unit {
+    font-size: 12px;
+    color: #999;
 }
 
 /* --- TRYB WYSOKIEGO KONTRASTU --- */
@@ -75,7 +128,6 @@ body.high-contrast {
     color: #fff !important;
 }
 
-/* Zaktualizowano nazwę klasy w trybie wysokiego kontrastu */
 .high-contrast .linia {
     background-color: #fff;
 }
@@ -91,8 +143,22 @@ body.high-contrast {
     border-color: #fff !important;
 }
 
-.high-contrast .chart-container {
+.high-contrast .chart-container,
+.high-contrast .stats-panel { /* Dodano stats-panel */
     background-color: #000 !important;
     border: 2px solid #00ff00 !important;
     box-shadow: none;
+}
+
+.high-contrast .stats-panel h2 {
+    border-bottom-color: #00ff00;
+}
+
+.high-contrast .stat-label,
+.high-contrast .stat-unit {
+    color: #00ff00 !important;
+}
+
+.high-contrast .stat-value {
+    color: #fff !important;
 }
