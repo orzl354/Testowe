@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("highContrast", document.body.classList.contains("high-contrast"));
     });
 
-    // 3. Zapisywanie pomiaru
+    //Zapisywanie pomiaru
     const form = document.getElementById("rejestracjaCisnieniaForm");
     form.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
             data: new Date().toLocaleString() // Zapisuje datę i godzinę
         };
 
-        // Pobieramy stare pomiary lub tworzymy nową tablicę
+        //Pobieranie starych pomiarów lub nowa tablica
         const allMeasurements = JSON.parse(localStorage.getItem("measurements")) || [];
         allMeasurements.push(pomiar);
         localStorage.setItem("measurements", JSON.stringify(allMeasurements));
