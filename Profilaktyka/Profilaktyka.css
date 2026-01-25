@@ -77,7 +77,7 @@ footer {
     text-align: center;
     padding-bottom: 20px;
     margin-top: 40px; 
-
+}
 .stopka-tresc p {
     margin: 5px 0;
     font-size: 14px;
@@ -117,7 +117,7 @@ body.high-contrast {
 
 .high-contrast .stopka-tresc p {
     color: #00ff00 !important; 
-
+}
 .high-contrast .stopka-tresc a {
     color: #00ff00 !important;
 }
