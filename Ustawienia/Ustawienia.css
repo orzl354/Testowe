@@ -70,7 +70,7 @@ header { position: relative; text-align: center; padding: 20px 40px; }
     cursor: pointer;
 }
 
-/* --- SEKRETY FORMULARZA --- */
+/* --- KONTENER USTAWIEŃ --- */
 .settings-container {
     background: #fff;
     border-radius: 16px;
@@ -117,7 +117,7 @@ header { position: relative; text-align: center; padding: 20px 40px; }
 
 .form-separator { border: 0; border-top: 1px solid #eee; margin: 40px 0; }
 
-/* --- STREFA NIEBEZPIECZNA --- */
+/* USUŃ KONTO */
 .Usun_konto {
     margin-top: 40px;
     padding: 20px;
@@ -158,7 +158,7 @@ header { position: relative; text-align: center; padding: 20px 40px; }
 footer {
     text-align: center;
     padding-bottom: 20px;
-    margin-top: 40px; /* Odstęp od kafelków */
+    margin-top: 40px; 
 }
 
 .stopka-tresc p {
@@ -209,7 +209,7 @@ body.high-contrast { background-color: #000 !important; color: #fff !important; 
 }
 
 .high-contrast .stopka-tresc p {
-    color: #00ff00 !important; /* Zielony tekst w trybie kontrastu */
+    color: #00ff00 !important; 
 }
 
 .high-contrast .stopka-tresc a {

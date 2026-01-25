@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Zakładam, że pole pulsu w bazie nazywa się 'pulse'. Jeśli nie, zmień m.pulse na odpowiednią nazwę
     const pulseData = userData.map(m => m.pulse ? Number(m.pulse) : 0); 
 
-    // --- OBLICZANIE ŚREDNICH (NOWE) ---
+    // --- OBLICZANIE ŚREDNICH  ---
     function calculateAverage(arr) {
         if (arr.length === 0) return 0;
         const sum = arr.reduce((a, b) => a + b, 0);

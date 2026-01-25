@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // 1. SPRAWDZENIE CZY UŻYTKOWNIK JEST ZALOGOWANY
+    //  SPRAWDZENIE CZY UŻYTKOWNIK JEST ZALOGOWANY
     const user = JSON.parse(localStorage.getItem("loggedUser"));
 
     if (!user) {
@@ -9,13 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // 2. WYŚWIETLENIE DANYCH
+    // WYŚWIETLENIE DANYCH
     document.getElementById("imie").textContent = user.imie;
     document.getElementById("nazwisko").textContent = user.nazwisko;
     document.getElementById("wiek").textContent = user.wiek;
     document.getElementById("email").textContent = user.email;
 
-    // 3. OBSŁUGA WYLOGOWANIA
+    //  OBSŁUGA WYLOGOWANIA
     const logoutBtn = document.getElementById("logoutBtn");
     if (logoutBtn) {
         logoutBtn.addEventListener("click", () => {
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 4. TRYB WYSOKIEGO KONTRASTU
+    // TRYB WYSOKIEGO KONTRASTU
     const toggle = document.getElementById("contrast-toggle");
     if (localStorage.getItem("highContrast") === "true") {
         document.body.classList.add("high-contrast");

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ===== HIGH CONTRAST - Standardowy mechanizm ===== */
+    /* HIGH CONTRAST  */
     const toggle = document.getElementById("contrast-toggle");
     if (localStorage.getItem("highContrast") === "true") {
         document.body.classList.add("high-contrast");
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* ===== REJESTRACJA ===== */
+    /*REJESTRACJA*/
     const form = document.getElementById("Rejestracja");
     const imieField = document.getElementById("imie");
     const nazwiskoField = document.getElementById("nazwisko");
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* ===== HELPERY ===== */
+    /*  HELPERY */
     function setError(input, message) {
         // Znajduje najbliższy element .error wewnątrz kontenera .field
         const fieldContainer = input.closest('.field');

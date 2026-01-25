@@ -1,7 +1,7 @@
 /* --- STYLE OGÓLNE --- */
 body {
     margin: 0;
-    padding: 20px; /* Przeniesione z wrappera */
+    padding: 20px; 
     font-family: Arial, sans-serif;
     background-color: #fff;
     color: #000;
@@ -53,7 +53,6 @@ header h1 {
     color: #fff;
 }
 
-/* Zmieniono nazwę z .separator na .linia */
 .linia {
     border: none;
     height: 2px;
@@ -154,8 +153,7 @@ input:focus {
 footer {
     text-align: center;
     padding-bottom: 20px;
-    margin-top: 40px; /* Odstęp od kafelków */
-}
+    margin-top: 40px; 
 
 .stopka-tresc p {
     margin: 5px 0;
@@ -175,7 +173,6 @@ body.high-contrast {
     box-shadow: none;
 }
 
-/* Zmieniono z .separator na .linia */
 .high-contrast .linia {
     background-color: #fff;
 }
@@ -215,7 +212,7 @@ body.high-contrast {
 }
 
 .high-contrast .stopka-tresc p {
-    color: #00ff00 !important; /* Zielony tekst w trybie kontrastu */
+    color: #00ff00 !important; 
 }
 
 .high-contrast .stopka-tresc a {
@@ -223,7 +220,7 @@ body.high-contrast {
 }
 
 .high-contrast .stopka-tresc p {
-    color: #00ff00 !important; /* Zielony tekst w trybie kontrastu */
+    color: #00ff00 !important; 
 }
 
 .high-contrast .stopka-tresc a {

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Sprawdzenie logowania
+    // Sprawdzenie logowania
     const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
     if (!loggedUser) {
         window.location.href = "../Logowanie/Logowanie.html";
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const userNameBtn = document.getElementById("userName");
     userNameBtn.textContent = `${loggedUser.imie} ${loggedUser.nazwisko}`;
 
-    // 2. Obsługa kontrastu
+    //  HIGH CONTRAST
     if (localStorage.getItem("highContrast") === "true") document.body.classList.add("high-contrast");
     document.getElementById("contrast-toggle").addEventListener("click", () => {
         document.body.classList.toggle("high-contrast");
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
             data: new Date().toLocaleString() // Zapisuje datę i godzinę
         };
 
-        //Pobieranie starych pomiarów lub nowa tablica
+        //Pobieranie starych pomiarów / nowa tablica
         const allMeasurements = JSON.parse(localStorage.getItem("measurements")) || [];
         allMeasurements.push(pomiar);
         localStorage.setItem("measurements", JSON.stringify(allMeasurements));

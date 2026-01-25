@@ -58,8 +58,8 @@ header h1 {
     margin: 20px 0;
 }
 
-/* --- UKŁAD GŁÓWNY (NOWE) --- */
-.content-wrapper {
+
+.content {
     display: flex;
     gap: 20px;
     align-items: flex-start; /* Wyrównanie do góry */
@@ -77,7 +77,7 @@ header h1 {
     min-height: 50vh;
 }
 
-/* --- PANEL STATYSTYK (NOWE) --- */
+/* --- PANEL STATYSTYK  --- */
 .stats-panel {
     flex: 1; /* Panel zajmuje mniej miejsca (1/4) */
     background-color: #ffffff;
@@ -125,7 +125,7 @@ header h1 {
 footer {
     text-align: center;
     padding-bottom: 20px;
-    margin-top: 40px; /* Odstęp od kafelków */
+    margin-top: 40px; 
 }
 
 .stopka-tresc p {
@@ -156,7 +156,7 @@ body.high-contrast {
 }
 
 .high-contrast .chart-container,
-.high-contrast .stats-panel { /* Dodano stats-panel */
+.high-contrast .stats-panel { 
     background-color: #000 !important;
     border: 2px solid #00ff00 !important;
     box-shadow: none;
@@ -176,7 +176,7 @@ body.high-contrast {
 }
 
 .high-contrast .stopka-tresc p {
-    color: #00ff00 !important; /* Zielony tekst w trybie kontrastu */
+    color: #00ff00 !important; 
 }
 
 .high-contrast .stopka-tresc a {

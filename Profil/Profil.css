@@ -1,7 +1,7 @@
 /* --- STYLE OGÓLNE --- */
 body {
     margin: 0;
-    padding: 20px; /* Przeniesione z usuniętego wrappera */
+    padding: 20px; 
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
     color: #111;
@@ -42,7 +42,6 @@ header {
     color: #fff;
 }
 
-/* Zmieniono nazwę z .separator na .linia */
 .linia {
     border: none;
     height: 2px;
@@ -50,7 +49,7 @@ header {
     margin: 20px 0;
 }
 
-/* --- LAYOUT PROFILU --- */
+/* --- LAYOUT  --- */
 .profile-layout {
     display: grid;
     grid-template-columns: 260px 1fr;
@@ -150,7 +149,7 @@ header {
 footer {
     text-align: center;
     padding-bottom: 20px;
-    margin-top: 40px; /* Odstęp od kafelków */
+    margin-top: 40px; 
 }
 
 .stopka-tresc p {
@@ -159,7 +158,7 @@ footer {
     color: #666; 
 }
 
-/* --- TRYB WYSOKIEGO KONTRASTU --- */
+/* ---  WYSOKI KONTRAST --- */
 body.high-contrast {
     background-color: #000 !important;
     color: #fff !important;
@@ -205,13 +204,11 @@ body.high-contrast {
     color: #000;
 }
 
-/* Zaktualizowano z .separator na .linia */
 .high-contrast .linia { background-color: #fff; }
 .high-contrast .header-link { color: #fff !important; }
 
 .high-contrast .stopka-tresc p {
-    color: #00ff00 !important; /* Zielony tekst w trybie kontrastu */
-}
+    color: #00ff00 !important; 
 
 .high-contrast .stopka-tresc a {
     color: #00ff00 !important;

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* HIGH CONTRAST - Standardowe działanie */
+    /* HIGH CONTRAST */
     const toggle = document.getElementById("contrast-toggle");
     if (localStorage.getItem("highContrast") === "true") {
         document.body.classList.add("high-contrast");
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* RESET HASŁA - Logika działania */
+    /* RESET HASŁA  */
     const form = document.getElementById("resetForm");
     const error = document.querySelector(".error");
     const emailInput = document.getElementById("email");

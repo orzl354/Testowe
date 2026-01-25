@@ -1,7 +1,7 @@
 /* --- STYLE OGÓLNE --- */
 body {
     margin: 0;
-    padding: 20px; /* Przeniesione z usuniętego wrappera */
+    padding: 20px; 
     font-family: Arial, sans-serif;
     color: #000;
     background-color: #ffffff;
@@ -45,7 +45,6 @@ header h1 { margin: 0; font-size: 28px; }
     color: #fff;
 }
 
-/* Zmieniono z .separator na .linia */
 .linia {
     border: none;
     height: 2px;
@@ -115,7 +114,6 @@ body.high-contrast { background-color: #000 !important; color: #fff !important; 
     color: #00ff00 !important;
 }
 
-/* Zmieniono na .linia */
 .high-contrast .linia { background-color: #fff; }
 
 .high-contrast #contrast-toggle, .high-contrast .logowanie-button {
@@ -126,7 +124,7 @@ body.high-contrast { background-color: #000 !important; color: #fff !important; 
 
 .high-contrast a.header-link { color: #fff !important; }
 .high-contrast .stopka-tresc p {
-    color: #00ff00 !important; /* Zielony tekst w trybie kontrastu */
+    color: #00ff00 !important; 
 }
 
 .high-contrast .stopka-tresc a {
